@@ -2,81 +2,162 @@
 :root{
   --bg:#0b0f14; --card:#121821; --text:#e6edf3; --sub:#9fb0c3;
   --accent:#5cc8ff; --muted:#1b2430; --border:#203042; --max:1120px;
+
+  /* Control strip height here */
+  --masthead-h: 92px;   /* <- change this to adjust top area */
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
-  font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
+html,body{
+  margin:0;padding:0;
+  background:var(--bg);color:var(--text);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif
+}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .container{max-width:var(--max);margin:0 auto;padding:24px}
 
-/* ---------- Masthead (tight) ---------- */
+/* ---------- Masthead ---------- */
 .masthead{
   position:relative;
-  padding-bottom:4px;               /* smaller */
+  height:var(--masthead-h);
   border-bottom:1px solid var(--border);
-  background:linear-gradient(180deg, rgba(5,8,12,.96) 0%, rgba(5,8,12,.9) 100%);
+  background:url('assets/img/cover2.jpeg') center/cover no-repeat;
 }
-.masthead__overlay{display:none}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:6px}
+.masthead__overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(5,8,12,.15) 0%, rgba(5,8,12,.15) 100%);
+}
 
-/* Brand row: logo box + big white wordmark */
-.brand-box{display:flex;align-items:center;gap:10px}
+/* Menu row */
+.nav-inner{
+  position:relative; z-index:1;
+  height:100%;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px;
+  padding:8px 24px;   /* horizontal + small vertical padding so logo doesn’t touch top */
+}
+
+/* ---------- Brand ---------- */
+.brand-box{display:flex;align-items:center;gap:12px}
+
 .brand-badge{
-  width:52px;height:52px;border-radius:8px;
-  background:#fff;border:1px solid #fff;     /* 1px as requested */
-  box-shadow:0 3px 10px rgba(0,0,0,.22);
-  display:grid;place-items:center
+  width:72px; height:72px; border-radius:10px;
+  background:#0b0f14;
+  border:0.5px solid rgba(255,255,255,.45);
+  box-shadow:0 2px 6px rgba(0,0,0,.18);
+  display:grid; place-items:center;
 }
-.brand-badge img{width:46px;height:46px;object-fit:contain}
-.brand-name{font-size:26px;font-weight:800;color:#fff;letter-spacing:.3px}
+.brand-badge img{width:60px; height:60px; object-fit:contain}
 
-/* Menu */
-.nav-on-cover .menu a{padding:6px 9px;border-radius:10px;text-shadow:0 0 10px rgba(0,0,0,.35)}
+.brand-name{
+  font-size:28px; font-weight:800; color:#fff; letter-spacing:.32px;
+}
+
+/* Menu links */
+.nav-on-cover .menu a{
+  padding:6px 10px; border-radius:8px;
+  text-shadow:0 0 8px rgba(0,0,0,.3)
+}
 .nav-on-cover .menu a.active,
-.nav-on-cover .menu a:hover{background:rgba(255,255,255,.06);outline:1px solid rgba(255,255,255,.08)}
-
-/* Banner constrained to content width (cover2.jpeg at natural width) */
-.banner{position:relative;display:flex;justify-content:flex-start;align-items:center;margin-top:6px}
-.banner img{
-  display:block;height:58px;width:auto;     /* ~2.5× smaller overall */
-  border-radius:8px;box-shadow:0 5px 14px rgba(0,0,0,.25)
+.nav-on-cover .menu a:hover{
+  background:rgba(255,255,255,.08);
+  outline:1px solid rgba(255,255,255,.10)
 }
 
 /* ---------- Intro ---------- */
-.intro{padding-top:22px;padding-bottom:6px}  /* tighter under masthead */
+.intro{padding:18px 24px 6px}
 .intro-title{font-size:32px;line-height:1.2;margin:6px 0 10px}
 .lead{color:var(--sub);max-width:880px;margin:0 0 16px}
-.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(92,200,255,.12);border:1px solid var(--border);font-size:12px;color:var(--accent);margin-bottom:6px}
+.tag{
+  display:inline-block;padding:4px 8px;border-radius:999px;
+  background:rgba(92,200,255,.12);border:1px solid var(--border);
+  font-size:12px;color:var(--accent);margin-bottom:6px
+}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
-.button{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:600}
-.button.primary{background:linear-gradient(135deg,#53ffa9,#5cc8ff);color:#0b0f14;border:none}
+.button {
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.58);  /* <- dim background for visibility */
+  color:var(--text);
+  font-weight:600;
+}
+.button.primary {
+  background:linear-gradient(135deg,#53ffa9,#5cc8ff);
+  color:#0b0f14;
+  border:none;
+}
 
-/* ---------- Grid / Cards ---------- */
+/* ---------- Cards / Grid / KPIs / Footer ---------- */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;backdrop-filter:saturate(140%) blur(2px)}
+.card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:18px;
+  backdrop-filter:saturate(140%) blur(2px)
+}
 .card h3{margin:0 0 6px}
 
-/* ---------- KPIs ---------- */
 .kpis{margin-top:18px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.kpi{grid-column:span 4;background:var(--muted);border:1px dashed var(--border);border-radius:14px;padding:12px}
+.kpi{
+  grid-column:span 4;background:var(--muted);
+  border:1px dashed var(--border);border-radius:14px;padding:12px
+}
 .kpi .num{font-size:26px;font-weight:700}
 
-/* ---------- Sections / Footer ---------- */
 .section{padding:24px}
 .h2{font-size:28px;margin:0 0 12px}
 .list{display:grid;gap:12px;margin:12px 0;padding:0}
-.list li{list-style:none;background:var(--muted);border:1px solid var(--border);padding:12px;border-radius:12px}
+.list li{
+  list-style:none;background:var(--muted);border:1px solid var(--border);
+  padding:12px;border-radius:12px
+}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .footer{margin-top:40px;border-top:1px solid var(--border);background:var(--muted)}
 .footer small{color:var(--sub)}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
-  .brand-badge{width:48px;height:48px}
-  .brand-badge img{width:42px;height:42px}
-  .brand-name{font-size:22px}
-  .banner img{height:52px}
+  :root{ --masthead-h: 80px; }   /* adjust for smaller screens */
+  .brand-badge{width:60px;height:60px}
+  .brand-badge img{width:48px;height:48px}
+  .brand-name{font-size:24px}
   .intro-title{font-size:28px}
+}
+
+/* === BUTTON CONTRAST PATCH (place at end of file) === */
+
+/* Base buttons (non-primary) – subtle translucent panel for contrast */
+.cta a.button,
+a.button {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: var(--text) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25) !important;
+}
+.cta a.button:hover,
+a.button:hover {
+  background: rgba(255,255,255,0.14) !important;
+}
+
+/* Primary button – brighter gradient + guaranteed text color */
+.cta a.button.primary,
+a.button.primary {
+  background: linear-gradient(135deg,#66ffd2,#64cfff) !important;
+  color: #0b0f14 !important;                 /* dark text on bright button */
+  border: 1px solid transparent !important;
+  box-shadow: 0 4px 14px rgba(83,255,169,.28), 0 0 0 1px rgba(255,255,255,.06) inset !important;
+}
+
+/* Ensure link pseudo-states don’t override color on primary */
+.cta a.button.primary:link,
+.cta a.button.primary:visited {
+  color: #0b0f14 !important;
+}
+
+/* Optional: a touch brighter on hover */
+.cta a.button.primary:hover,
+a.button.primary:hover {
+  filter: brightness(1.06);
 }
