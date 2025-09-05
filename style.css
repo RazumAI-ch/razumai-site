@@ -11,19 +11,23 @@ a:hover{text-decoration:underline}
 .container{max-width:var(--max);margin:0 auto;padding:24px}
 
 /* ---------- Masthead (cover image + nav overlay) ---------- */
+/* Smaller height per your request */
 .masthead{
   position:relative;
-  height:170px; /* slimmer, less dominating */
+  height:120px; /* was 170 */
   border-bottom:1px solid var(--border);
   background: url('assets/img/cover.png') center/cover no-repeat;
 }
 .masthead__overlay{
   position:absolute; inset:0;
-  /* darker multi-stop overlay so nav is readable */
-  background: linear-gradient(180deg, rgba(5,8,12,.75) 0%, rgba(5,8,12,.65) 45%, rgba(5,8,12,.55) 100%);
+  /* darker so menu stands out even on busy areas */
+  background: linear-gradient(180deg, rgba(5,8,12,.80) 0%, rgba(5,8,12,.72) 45%, rgba(5,8,12,.62) 100%);
 }
-.nav-inner{position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:18px}
-.nav-on-cover a{color:var(--text)}
+.nav-inner{
+  position:relative; z-index:1;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding-top:14px
+}
 .nav-on-cover .menu a{padding:8px 10px;border-radius:10px;text-shadow:0 0 10px rgba(0,0,0,.35)}
 .nav-on-cover .menu a.active,
 .nav-on-cover .menu a:hover{
@@ -31,10 +35,23 @@ a:hover{text-decoration:underline}
   outline:1px solid rgba(255,255,255,.08);
 }
 
-/* Brand tighter + larger for premium feel */
+/* Brand: bigger wordmark, slightly smaller/tighter icon */
 .brand{display:flex;align-items:center;gap:10px}
-.logo{height:40px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(92,200,255,.4))}
-.brand-name{font-size:20px;font-weight:800;letter-spacing:.3px;text-shadow:0 0 18px rgba(92,200,255,.25)}
+.logo{
+  height:36px;             /* was 40 */
+  width:auto; display:block;
+  /* soften any light edges around PNGs so it doesn’t look like a white tile */
+  background:transparent; border-radius:10px;
+  mix-blend-mode:screen;   /* blends glow nicely on dark covers */
+  filter:
+    drop-shadow(0 2px 8px rgba(92,200,255,.4))
+    brightness(1.05) contrast(1.04);
+}
+.brand-name{
+  font-size:22px;          /* was 20 */
+  font-weight:800; letter-spacing:.32px;
+  text-shadow:0 0 18px rgba(92,200,255,.22);
+}
 
 /* ---------- Compact intro below masthead ---------- */
 .intro{padding-top:18px;padding-bottom:8px}
@@ -69,7 +86,7 @@ a:hover{text-decoration:underline}
   .masthead{background-position:60% center}
 }
 @media (max-width: 900px){
-  .logo{height:34px}
-  .brand-name{font-size:18px}
+  .logo{height:30px}
+  .brand-name{font-size:20px}
   .intro-title{font-size:28px}
 }
