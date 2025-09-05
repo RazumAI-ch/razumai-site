@@ -5,138 +5,72 @@
 }
 
 *{box-sizing:border-box}
-html,body{
-  margin:0; padding:0;
-  background:var(--bg); color:var(--text);
-  font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif
-}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .container{max-width:var(--max);margin:0 auto;padding:24px}
 
-/* ---------- Masthead ---------- */
+/* ---------- Masthead (2.5× smaller) ---------- */
 .masthead{
   position:relative;
-  padding-bottom:10px;
+  padding-bottom:6px; /* tighter */
   border-bottom:1px solid var(--border);
-  background:linear-gradient(180deg, rgba(5,8,12,.92) 0%, rgba(5,8,12,.86) 100%);
+  background:linear-gradient(180deg, rgba(5,8,12,.94) 0%, rgba(5,8,12,.9) 100%);
 }
 .masthead__overlay{display:none}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px}
 
-.nav-inner{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:16px; padding-top:14px
-}
-
-/* Brand box: logo square + text side by side */
-.brand-box{display:flex;align-items:center;gap:14px}
-
-/* Logo badge (LinkedIn-like) */
+/* Brand row */
+.brand-box{display:flex;align-items:center;gap:12px}
 .brand-badge{
-  width:64px; height:64px; border-radius:8px;
-  background:#fff;
-  border:3px solid #fff;
-  box-shadow:0 4px 14px rgba(0,0,0,.25);
-  display:grid; place-items:center;
+  width:56px;height:56px;border-radius:8px;
+  background:#fff;border:1px solid #fff; /* 1px per request */
+  box-shadow:0 3px 10px rgba(0,0,0,.22);
+  display:grid;place-items:center
 }
-.brand-badge img{
-  width:56px; height:56px; object-fit:contain;
-}
-
-/* Wordmark */
-.brand-name{
-  font-size:26px;
-  font-weight:800;
-  color:#fff;
-  letter-spacing:.3px;
-}
+.brand-badge img{width:50px;height:50px;object-fit:contain}
+.brand-name{font-size:26px;font-weight:800;color:#fff;letter-spacing:.3px}
 
 /* Menu */
-.nav-on-cover .menu a{
-  padding:8px 10px; border-radius:10px;
-  text-shadow:0 0 10px rgba(0,0,0,.35)
-}
-.nav-on-cover .menu a.active,
-.nav-on-cover .menu a:hover{
-  background:rgba(255,255,255,.06);
-  outline:1px solid rgba(255,255,255,.08);
-}
+.nav-on-cover .menu a{padding:6px 9px;border-radius:10px;text-shadow:0 0 10px rgba(0,0,0,.35)}
+.nav-on-cover .menu a.active,.nav-on-cover .menu a:hover{background:rgba(255,255,255,.06);outline:1px solid rgba(255,255,255,.08)}
 
-/* Banner image (cover2.jpg centered at natural width) */
-.banner{display:flex;justify-content:center;margin-top:10px}
-.banner::before, .banner::after{
-  content:""; position:absolute; top:0; bottom:0; width:14%;
-  pointer-events:none;
-}
-.banner::before{
-  left:0;
-  background:linear-gradient(90deg, var(--bg) 0%, rgba(11,15,20,0) 100%);
-}
-.banner::after{
-  right:0;
-  background:linear-gradient(-90deg, var(--bg) 0%, rgba(11,15,20,0) 100%);
-}
+/* Banner constrained to content width; not too wide */
+.banner{display:flex;justify-content:flex-start;margin-top:8px}
 .banner img{
-  display:block; height:110px; width:auto;
-  border-radius:8px;
-  box-shadow:0 8px 28px rgba(0,0,0,.35);
+  display:block;height:70px;width:auto; /* ~2.5× smaller overall */
+  border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.28)
 }
 
 /* ---------- Intro ---------- */
-.intro{padding-top:48px; padding-bottom:8px}
+.intro{padding-top:28px;padding-bottom:8px}
 .intro-title{font-size:32px;line-height:1.2;margin:6px 0 10px}
 .lead{color:var(--sub);max-width:880px;margin:0 0 16px}
-.tag{
-  display:inline-block;padding:4px 8px;border-radius:999px;
-  background:rgba(92,200,255,.12);border:1px solid var(--border);
-  font-size:12px;color:var(--accent);margin-bottom:6px
-}
+.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(92,200,255,.12);border:1px solid var(--border);font-size:12px;color:var(--accent);margin-bottom:6px}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
-.button{
-  display:inline-block;padding:10px 14px;border-radius:12px;
-  border:1px solid var(--border);background:var(--card);
-  color:var(--text);font-weight:600
-}
-.button.primary{
-  background:linear-gradient(135deg,#53ffa9,#5cc8ff);
-  color:#0b0f14;border:none
-}
+.button{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:600}
+.button.primary{background:linear-gradient(135deg,#53ffa9,#5cc8ff);color:#0b0f14;border:none}
 
-/* ---------- Cards / Grid ---------- */
+/* ---------- Cards / Grid / KPIs / Footer ---------- */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:16px;padding:18px;
-  backdrop-filter:saturate(140%) blur(2px)
-}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;backdrop-filter:saturate(140%) blur(2px)}
 .card h3{margin:0 0 6px}
-
-/* ---------- KPIs ---------- */
 .kpis{margin-top:18px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.kpi{
-  grid-column:span 4;background:var(--muted);
-  border:1px dashed var(--border);border-radius:14px;padding:12px
-}
+.kpi{grid-column:span 4;background:var(--muted);border:1px dashed var(--border);border-radius:14px;padding:12px}
 .kpi .num{font-size:26px;font-weight:700}
-
-/* ---------- Sections / Footer ---------- */
 .section{padding:24px}
 .h2{font-size:28px;margin:0 0 12px}
 .list{display:grid;gap:12px;margin:12px 0;padding:0}
-.list li{
-  list-style:none;background:var(--muted);border:1px solid var(--border);
-  padding:12px;border-radius:12px
-}
+.list li{list-style:none;background:var(--muted);border:1px solid var(--border);padding:12px;border-radius:12px}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .footer{margin-top:40px;border-top:1px solid var(--border);background:var(--muted)}
 .footer small{color:var(--sub)}
 
-/* ---------- Responsive tweaks ---------- */
+/* ---------- Responsive ---------- */
 @media (max-width: 900px){
-  .brand-badge{width:56px;height:56px}
-  .brand-badge img{width:48px;height:48px}
+  .brand-badge{width:52px;height:52px}
+  .brand-badge img{width:46px;height:46px}
   .brand-name{font-size:22px}
-  .banner img{height:100px}
-  .intro{padding-top:44px}
+  .banner img{height:64px}
   .intro-title{font-size:28px}
 }
