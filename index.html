@@ -12,15 +12,18 @@
   </head>
 
   <body class="home">
-    <!-- Masthead: shows cover2.jpg at natural width, with fading edges -->
+    <!-- Masthead -->
     <header class="masthead">
       <div class="masthead__overlay"></div>
 
       <div class="container nav-inner nav-on-cover">
-        <!-- brand text only (no small logo here) -->
-        <a class="brand brand-text" href="index.html">
+        <!-- Logo box + brand text -->
+        <div class="brand-box">
+          <div class="brand-badge">
+            <img src="assets/img/logo.png" alt="RazumAI logo" />
+          </div>
           <span class="brand-name">RazumAI</span>
-        </a>
+        </div>
 
         <nav class="menu" aria-label="Primary">
           <a class="active" href="index.html">Home</a>
@@ -30,18 +33,13 @@
         </nav>
       </div>
 
-      <!-- Centered banner image (cover2.jpg) with natural width -->
+      <!-- Cover image -->
       <div class="banner">
         <img src="assets/img/cover2.jpg" alt="" />
       </div>
-
-      <!-- Overlapping square badge with the ORIGINAL logo.png -->
-      <div class="brand-badge" aria-hidden="true">
-        <img src="assets/img/logo.png" alt="" />
-      </div>
     </header>
 
-    <!-- Compact intro under the masthead -->
+    <!-- Intro -->
     <section class="intro container">
       <span class="tag">GxP • Pharma • Validation</span>
       <h1 class="intro-title">GxP-grade AI for pharmaceutical manufacturing</h1>

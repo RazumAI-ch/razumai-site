@@ -5,42 +5,65 @@
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
+html,body{
+  margin:0; padding:0;
+  background:var(--bg); color:var(--text);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif
+}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .container{max-width:var(--max);margin:0 auto;padding:24px}
 
-/* ---------- Masthead shell ---------- */
+/* ---------- Masthead ---------- */
 .masthead{
   position:relative;
-  padding-bottom:10px; /* space for badge overlap */
+  padding-bottom:10px;
   border-bottom:1px solid var(--border);
-  background:linear-gradient(180deg, rgba(5,8,12,.92) 0%, rgba(5,8,12,.86) 100%); /* top bar tint */
+  background:linear-gradient(180deg, rgba(5,8,12,.92) 0%, rgba(5,8,12,.86) 100%);
 }
-.masthead__overlay{ display:none; }
+.masthead__overlay{display:none}
 
-/* Nav over the top tint */
 .nav-inner{
   display:flex; align-items:center; justify-content:space-between;
   gap:16px; padding-top:14px
 }
-.nav-on-cover .menu a{padding:8px 10px;border-radius:10px;text-shadow:0 0 10px rgba(0,0,0,.35)}
+
+/* Brand box: logo square + text side by side */
+.brand-box{display:flex;align-items:center;gap:14px}
+
+/* Logo badge (LinkedIn-like) */
+.brand-badge{
+  width:64px; height:64px; border-radius:8px;
+  background:#fff;
+  border:3px solid #fff;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+  display:grid; place-items:center;
+}
+.brand-badge img{
+  width:56px; height:56px; object-fit:contain;
+}
+
+/* Wordmark */
+.brand-name{
+  font-size:26px;
+  font-weight:800;
+  color:#fff;
+  letter-spacing:.3px;
+}
+
+/* Menu */
+.nav-on-cover .menu a{
+  padding:8px 10px; border-radius:10px;
+  text-shadow:0 0 10px rgba(0,0,0,.35)
+}
 .nav-on-cover .menu a.active,
 .nav-on-cover .menu a:hover{
   background:rgba(255,255,255,.06);
   outline:1px solid rgba(255,255,255,.08);
 }
 
-/* Brand text only in nav (no small logo) */
-.brand-text .brand-name{
-  font-size:22px; font-weight:800; letter-spacing:.32px;
-  text-shadow:0 0 18px rgba(92,200,255,.22);
-}
-
-/* Centered banner image at natural width, with fading edges */
-.banner{
-  position:relative; display:flex; justify-content:center; margin-top:10px;
-}
+/* Banner image (cover2.jpg centered at natural width) */
+.banner{display:flex;justify-content:center;margin-top:10px}
 .banner::before, .banner::after{
   content:""; position:absolute; top:0; bottom:0; width:14%;
   pointer-events:none;
@@ -54,53 +77,66 @@ a:hover{text-decoration:underline}
   background:linear-gradient(-90deg, var(--bg) 0%, rgba(11,15,20,0) 100%);
 }
 .banner img{
-  display:block; height:110px; width:auto; /* use natural width; control height only */
+  display:block; height:110px; width:auto;
   border-radius:8px;
   box-shadow:0 8px 28px rgba(0,0,0,.35);
 }
 
-/* Overlapping square badge with ORIGINAL logo.png */
-.brand-badge{
-  position:absolute; left:calc(24px + max((100vw - var(--max)),0px)/2); top:56px; /* overlaps banner */
-  width:84px; height:84px; border-radius:12px;
-  background:#0e131a; border:1px solid rgba(255,255,255,.07);
-  box-shadow: 0 6px 24px rgba(0,0,0,.35);
-  display:grid; place-items:center; z-index:2;
-}
-.brand-badge img{
-  width:70px; height:70px; object-fit:contain;
-  filter: drop-shadow(0 2px 8px rgba(92,200,255,.35));
-}
-
 /* ---------- Intro ---------- */
-.intro{padding-top:48px; padding-bottom:8px} /* extra space for badge */
+.intro{padding-top:48px; padding-bottom:8px}
 .intro-title{font-size:32px;line-height:1.2;margin:6px 0 10px}
 .lead{color:var(--sub);max-width:880px;margin:0 0 16px}
-.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(92,200,255,.12);border:1px solid var(--border);font-size:12px;color:var(--accent);margin-bottom:6px}
+.tag{
+  display:inline-block;padding:4px 8px;border-radius:999px;
+  background:rgba(92,200,255,.12);border:1px solid var(--border);
+  font-size:12px;color:var(--accent);margin-bottom:6px
+}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
-.button{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:600}
-.button.primary{background:linear-gradient(135deg,#53ffa9,#5cc8ff);color:#0b0f14;border:none}
+.button{
+  display:inline-block;padding:10px 14px;border-radius:12px;
+  border:1px solid var(--border);background:var(--card);
+  color:var(--text);font-weight:600
+}
+.button.primary{
+  background:linear-gradient(135deg,#53ffa9,#5cc8ff);
+  color:#0b0f14;border:none
+}
 
-/* ---------- Grid / Cards / KPIs / Footer ---------- */
+/* ---------- Cards / Grid ---------- */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;backdrop-filter:saturate(140%) blur(2px)}
+.card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:18px;
+  backdrop-filter:saturate(140%) blur(2px)
+}
 .card h3{margin:0 0 6px}
+
+/* ---------- KPIs ---------- */
 .kpis{margin-top:18px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.kpi{grid-column:span 4;background:var(--muted);border:1px dashed var(--border);border-radius:14px;padding:12px}
+.kpi{
+  grid-column:span 4;background:var(--muted);
+  border:1px dashed var(--border);border-radius:14px;padding:12px
+}
 .kpi .num{font-size:26px;font-weight:700}
+
+/* ---------- Sections / Footer ---------- */
 .section{padding:24px}
 .h2{font-size:28px;margin:0 0 12px}
 .list{display:grid;gap:12px;margin:12px 0;padding:0}
-.list li{list-style:none;background:var(--muted);border:1px solid var(--border);padding:12px;border-radius:12px}
+.list li{
+  list-style:none;background:var(--muted);border:1px solid var(--border);
+  padding:12px;border-radius:12px
+}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .footer{margin-top:40px;border-top:1px solid var(--border);background:var(--muted)}
 .footer small{color:var(--sub)}
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive tweaks ---------- */
 @media (max-width: 900px){
-  .brand-badge{left:24px; width:72px; height:72px; top:60px}
-  .brand-badge img{width:60px; height:60px}
+  .brand-badge{width:56px;height:56px}
+  .brand-badge img{width:48px;height:48px}
+  .brand-name{font-size:22px}
   .banner img{height:100px}
   .intro{padding-top:44px}
-  .brand-text .brand-name{font-size:20px}
+  .intro-title{font-size:28px}
 }
