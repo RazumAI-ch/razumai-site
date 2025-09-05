@@ -1,0 +1,52 @@
+/* File: style.css */
+:root{
+  --bg:#0b0f14; --card:#121821; --text:#e6edf3; --sub:#9fb0c3;
+  --accent:#5cc8ff; --muted:#1b2430; --border:#203042; --max:1120px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:var(--max);margin:0 auto;padding:24px}
+
+/* Nav */
+.nav{position:sticky;top:0;background:rgba(11,15,20,.85);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--border);z-index:50}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+.brand .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#53ffa9,#5cc8ff);display:inline-block}
+.nav a{padding:10px 12px;border-radius:10px}
+.nav a.active,.nav a:hover{background:var(--muted)}
+.menu{display:flex;gap:6px;flex-wrap:wrap}
+
+/* Hero */
+.hero{padding:64px 24px 24px;background:radial-gradient(1200px 600px at 70% -10%,rgba(92,200,255,.15),transparent);border-bottom:1px solid var(--border)}
+.hero h1{font-size:40px;line-height:1.15;margin:0 0 12px}
+.hero p{color:var(--sub);max-width:840px;margin:0 0 20px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.button{display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:600}
+.button.primary{background:linear-gradient(135deg,#53ffa9,#5cc8ff);color:#0b0f14;border:none}
+
+/* Cards & grid */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+.card h3{margin:0 0 6px}
+
+/* KPIs */
+.kpis{margin-top:18px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.kpi{grid-column:span 4;background:var(--muted);border:1px dashed var(--border);border-radius:14px;padding:12px}
+.kpi .num{font-size:28px;font-weight:700}
+
+/* Sections & footer */
+.section{padding:24px}
+.h2{font-size:28px;margin:0 0 12px}
+.lead{color:var(--sub)}
+.list{display:grid;gap:12px;margin:12px 0;padding:0}
+.list li{list-style:none;background:var(--muted);border:1px solid var(--border);padding:12px;border-radius:12px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.footer{margin-top:40px;border-top:1px solid var(--border);background:var(--muted)}
+.footer small{color:var(--sub)}
+
+@media (max-width: 900px){
+  .two-col{grid-template-columns:1fr}
+  .menu{display:none}
+}

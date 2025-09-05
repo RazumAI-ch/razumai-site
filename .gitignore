@@ -1,0 +1,13 @@
+# File: .gitignore
+
+# OS / IDE files
+.DS_Store
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Node/npm stuff (only if you ever add it later)
+node_modules/
+dist/
