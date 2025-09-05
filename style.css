@@ -4,7 +4,7 @@
   --accent:#5cc8ff; --muted:#1b2430; --border:#203042; --max:1120px;
 
   /* Control strip height here */
-  --masthead-h: 92px;   /* <- change this to adjust top area */
+  --masthead-h: 92px;   /* adjust to make top strip taller/shorter */
 }
 
 *{box-sizing:border-box}
@@ -35,7 +35,7 @@ a:hover{text-decoration:underline}
   height:100%;
   display:flex; align-items:center; justify-content:space-between;
   gap:12px;
-  padding:8px 24px;   /* horizontal + small vertical padding so logo doesn’t touch top */
+  padding:8px 24px;   /* horizontal + vertical breathing room */
 }
 
 /* ---------- Brand ---------- */
@@ -44,7 +44,7 @@ a:hover{text-decoration:underline}
 .brand-badge{
   width:72px; height:72px; border-radius:10px;
   background:#0b0f14;
-  border:0.5px solid rgba(255,255,255,.45);
+  border:3px solid #fff;                /* solid white, 1px */
   box-shadow:0 2px 6px rgba(0,0,0,.18);
   display:grid; place-items:center;
 }
@@ -75,20 +75,35 @@ a:hover{text-decoration:underline}
   font-size:12px;color:var(--accent);margin-bottom:6px
 }
 .cta{display:flex;gap:12px;flex-wrap:wrap}
-.button {
+
+/* ---------- Buttons ---------- */
+
+/* Secondary (non-primary) */
+a.button, .cta a.button {
   display:inline-block;
   padding:10px 14px;
   border-radius:12px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,0.58);  /* <- dim background for visibility */
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.12);         /* translucent panel */
   color:var(--text);
   font-weight:600;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+  transition:background .15s ease, filter .15s ease, box-shadow .15s ease;
 }
-.button.primary {
+a.button:hover, .cta a.button:hover {
+  background:rgba(255,255,255,.18);
+}
+
+/* Primary */
+a.button.primary, .cta a.button.primary {
   background:linear-gradient(135deg,#53ffa9,#5cc8ff);
   color:#0b0f14;
-  border:none;
+  border:0;
+  box-shadow:0 6px 16px rgba(83,255,169,.28);
 }
+a.button.primary:link,
+a.button.primary:visited { color:#0b0f14; }
+a.button.primary:hover { filter:brightness(1.06); }
 
 /* ---------- Cards / Grid / KPIs / Footer ---------- */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
@@ -124,40 +139,4 @@ a:hover{text-decoration:underline}
   .brand-badge img{width:48px;height:48px}
   .brand-name{font-size:24px}
   .intro-title{font-size:28px}
-}
-
-/* === BUTTON CONTRAST PATCH (place at end of file) === */
-
-/* Base buttons (non-primary) – subtle translucent panel for contrast */
-.cta a.button,
-a.button {
-  background: rgba(255,255,255,0.08) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
-  color: var(--text) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,.25) !important;
-}
-.cta a.button:hover,
-a.button:hover {
-  background: rgba(255,255,255,0.14) !important;
-}
-
-/* Primary button – brighter gradient + guaranteed text color */
-.cta a.button.primary,
-a.button.primary {
-  background: linear-gradient(135deg,#66ffd2,#64cfff) !important;
-  color: #0b0f14 !important;                 /* dark text on bright button */
-  border: 1px solid transparent !important;
-  box-shadow: 0 4px 14px rgba(83,255,169,.28), 0 0 0 1px rgba(255,255,255,.06) inset !important;
-}
-
-/* Ensure link pseudo-states don’t override color on primary */
-.cta a.button.primary:link,
-.cta a.button.primary:visited {
-  color: #0b0f14 !important;
-}
-
-/* Optional: a touch brighter on hover */
-.cta a.button.primary:hover,
-a.button.primary:hover {
-  filter: brightness(1.06);
 }
