@@ -2,11 +2,6 @@
 :root{
   --bg:#0b0f14; --card:#121821; --text:#e6edf3; --sub:#9fb0c3;
   --accent:#5cc8ff; --muted:#1b2430; --border:#203042; --max:1120px;
-
-  /* LinkedIn-like crop controls for the banner made from the LOGO image */
-  --cover-x: 50%;   /* horizontal focal point (0% left – 100% right) */
-  --cover-y: 40%;   /* vertical focal point (0% top – 100% bottom) */
-  --cover-zoom: 170%; /* how much to zoom the logo as a banner background */
 }
 
 *{box-sizing:border-box}
@@ -15,26 +10,19 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .container{max-width:var(--max);margin:0 auto;padding:24px}
 
-/* ---------- Masthead (banner built from the main logo) ---------- */
+/* ---------- Masthead shell ---------- */
 .masthead{
   position:relative;
-  height:110px; /* compact; adjust to 100–130px if you want */
+  padding-bottom:10px; /* space for badge overlap */
   border-bottom:1px solid var(--border);
-  background: url('assets/img/logo.png') no-repeat;
-  background-position: var(--cover-x) var(--cover-y);
-  background-size: var(--cover-zoom) auto;
+  background:linear-gradient(180deg, rgba(5,8,12,.92) 0%, rgba(5,8,12,.86) 100%); /* top bar tint */
 }
-.masthead__overlay{
-  position:absolute; inset:0;
-  /* darken so nav is readable over a detailed image */
-  background: linear-gradient(180deg, rgba(5,8,12,.85) 0%, rgba(5,8,12,.7) 55%, rgba(5,8,12,.62) 100%);
-}
+.masthead__overlay{ display:none; }
 
-/* Nav over the banner */
+/* Nav over the top tint */
 .nav-inner{
-  position:relative; z-index:1;
   display:flex; align-items:center; justify-content:space-between;
-  gap:16px; padding-top:14px;
+  gap:16px; padding-top:14px
 }
 .nav-on-cover .menu a{padding:8px 10px;border-radius:10px;text-shadow:0 0 10px rgba(0,0,0,.35)}
 .nav-on-cover .menu a.active,
@@ -43,23 +31,39 @@ a:hover{text-decoration:underline}
   outline:1px solid rgba(255,255,255,.08);
 }
 
-/* Brand: transparent logo + larger wordmark */
-.brand{display:flex;align-items:center;gap:10px}
-.logo{
-  height:28px; width:auto; display:block;
-  filter: drop-shadow(0 2px 7px rgba(92,200,255,.38)) brightness(1.02) contrast(1.03);
-}
-.brand-name{
+/* Brand text only in nav (no small logo) */
+.brand-text .brand-name{
   font-size:22px; font-weight:800; letter-spacing:.32px;
   text-shadow:0 0 18px rgba(92,200,255,.22);
 }
 
-/* Overlapping square badge (LinkedIn style) using the transparent logo  */
+/* Centered banner image at natural width, with fading edges */
+.banner{
+  position:relative; display:flex; justify-content:center; margin-top:10px;
+}
+.banner::before, .banner::after{
+  content:""; position:absolute; top:0; bottom:0; width:14%;
+  pointer-events:none;
+}
+.banner::before{
+  left:0;
+  background:linear-gradient(90deg, var(--bg) 0%, rgba(11,15,20,0) 100%);
+}
+.banner::after{
+  right:0;
+  background:linear-gradient(-90deg, var(--bg) 0%, rgba(11,15,20,0) 100%);
+}
+.banner img{
+  display:block; height:110px; width:auto; /* use natural width; control height only */
+  border-radius:8px;
+  box-shadow:0 8px 28px rgba(0,0,0,.35);
+}
+
+/* Overlapping square badge with ORIGINAL logo.png */
 .brand-badge{
-  position:absolute; left:calc(24px + max((100vw - var(--max)),0px)/2); bottom:-26px;
+  position:absolute; left:calc(24px + max((100vw - var(--max)),0px)/2); top:56px; /* overlaps banner */
   width:84px; height:84px; border-radius:12px;
-  background:#0e131a; /* subtle dark tile instead of bright white */
-  border:1px solid rgba(255,255,255,.07);
+  background:#0e131a; border:1px solid rgba(255,255,255,.07);
   box-shadow: 0 6px 24px rgba(0,0,0,.35);
   display:grid; place-items:center; z-index:2;
 }
@@ -69,7 +73,7 @@ a:hover{text-decoration:underline}
 }
 
 /* ---------- Intro ---------- */
-.intro{padding-top:38px; padding-bottom:8px}
+.intro{padding-top:48px; padding-bottom:8px} /* extra space for badge */
 .intro-title{font-size:32px;line-height:1.2;margin:6px 0 10px}
 .lead{color:var(--sub);max-width:880px;margin:0 0 16px}
 .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(92,200,255,.12);border:1px solid var(--border);font-size:12px;color:var(--accent);margin-bottom:6px}
@@ -77,17 +81,13 @@ a:hover{text-decoration:underline}
 .button{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:600}
 .button.primary{background:linear-gradient(135deg,#53ffa9,#5cc8ff);color:#0b0f14;border:none}
 
-/* ---------- Grid / Cards ---------- */
+/* ---------- Grid / Cards / KPIs / Footer ---------- */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;backdrop-filter:saturate(140%) blur(2px)}
 .card h3{margin:0 0 6px}
-
-/* ---------- KPIs ---------- */
 .kpis{margin-top:18px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
 .kpi{grid-column:span 4;background:var(--muted);border:1px dashed var(--border);border-radius:14px;padding:12px}
 .kpi .num{font-size:26px;font-weight:700}
-
-/* ---------- Sections / Footer ---------- */
 .section{padding:24px}
 .h2{font-size:28px;margin:0 0 12px}
 .list{display:grid;gap:12px;margin:12px 0;padding:0}
@@ -97,14 +97,10 @@ a:hover{text-decoration:underline}
 .footer small{color:var(--sub)}
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1100px){
-  .masthead{background-size: calc(var(--cover-zoom) + 30%) auto; background-position: 58% 42%;}
-}
 @media (max-width: 900px){
-  .logo{height:24px}
-  .brand-name{font-size:20px}
-  .brand-badge{left:24px; width:72px; height:72px; bottom:-22px}
+  .brand-badge{left:24px; width:72px; height:72px; top:60px}
   .brand-badge img{width:60px; height:60px}
-  .intro{padding-top:34px}
-  .intro-title{font-size:28px}
+  .banner img{height:100px}
+  .intro{padding-top:44px}
+  .brand-text .brand-name{font-size:20px}
 }
