@@ -5,45 +5,47 @@
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .container{max-width:var(--max);margin:0 auto;padding:24px}
 
-/* ---------- Masthead (2.5× smaller) ---------- */
+/* ---------- Masthead (tight) ---------- */
 .masthead{
   position:relative;
-  padding-bottom:6px; /* tighter */
+  padding-bottom:4px;               /* smaller */
   border-bottom:1px solid var(--border);
-  background:linear-gradient(180deg, rgba(5,8,12,.94) 0%, rgba(5,8,12,.9) 100%);
+  background:linear-gradient(180deg, rgba(5,8,12,.96) 0%, rgba(5,8,12,.9) 100%);
 }
 .masthead__overlay{display:none}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:6px}
 
-/* Brand row */
-.brand-box{display:flex;align-items:center;gap:12px}
+/* Brand row: logo box + big white wordmark */
+.brand-box{display:flex;align-items:center;gap:10px}
 .brand-badge{
-  width:56px;height:56px;border-radius:8px;
-  background:#fff;border:1px solid #fff; /* 1px per request */
+  width:52px;height:52px;border-radius:8px;
+  background:#fff;border:1px solid #fff;     /* 1px as requested */
   box-shadow:0 3px 10px rgba(0,0,0,.22);
   display:grid;place-items:center
 }
-.brand-badge img{width:50px;height:50px;object-fit:contain}
+.brand-badge img{width:46px;height:46px;object-fit:contain}
 .brand-name{font-size:26px;font-weight:800;color:#fff;letter-spacing:.3px}
 
 /* Menu */
 .nav-on-cover .menu a{padding:6px 9px;border-radius:10px;text-shadow:0 0 10px rgba(0,0,0,.35)}
-.nav-on-cover .menu a.active,.nav-on-cover .menu a:hover{background:rgba(255,255,255,.06);outline:1px solid rgba(255,255,255,.08)}
+.nav-on-cover .menu a.active,
+.nav-on-cover .menu a:hover{background:rgba(255,255,255,.06);outline:1px solid rgba(255,255,255,.08)}
 
-/* Banner constrained to content width; not too wide */
-.banner{display:flex;justify-content:flex-start;margin-top:8px}
+/* Banner constrained to content width (cover2.jpeg at natural width) */
+.banner{position:relative;display:flex;justify-content:flex-start;align-items:center;margin-top:6px}
 .banner img{
-  display:block;height:70px;width:auto; /* ~2.5× smaller overall */
-  border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.28)
+  display:block;height:58px;width:auto;     /* ~2.5× smaller overall */
+  border-radius:8px;box-shadow:0 5px 14px rgba(0,0,0,.25)
 }
 
 /* ---------- Intro ---------- */
-.intro{padding-top:28px;padding-bottom:8px}
+.intro{padding-top:22px;padding-bottom:6px}  /* tighter under masthead */
 .intro-title{font-size:32px;line-height:1.2;margin:6px 0 10px}
 .lead{color:var(--sub);max-width:880px;margin:0 0 16px}
 .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(92,200,255,.12);border:1px solid var(--border);font-size:12px;color:var(--accent);margin-bottom:6px}
@@ -51,13 +53,17 @@ a:hover{text-decoration:underline}
 .button{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:600}
 .button.primary{background:linear-gradient(135deg,#53ffa9,#5cc8ff);color:#0b0f14;border:none}
 
-/* ---------- Cards / Grid / KPIs / Footer ---------- */
+/* ---------- Grid / Cards ---------- */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;backdrop-filter:saturate(140%) blur(2px)}
 .card h3{margin:0 0 6px}
+
+/* ---------- KPIs ---------- */
 .kpis{margin-top:18px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
 .kpi{grid-column:span 4;background:var(--muted);border:1px dashed var(--border);border-radius:14px;padding:12px}
 .kpi .num{font-size:26px;font-weight:700}
+
+/* ---------- Sections / Footer ---------- */
 .section{padding:24px}
 .h2{font-size:28px;margin:0 0 12px}
 .list{display:grid;gap:12px;margin:12px 0;padding:0}
@@ -68,9 +74,9 @@ a:hover{text-decoration:underline}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
-  .brand-badge{width:52px;height:52px}
-  .brand-badge img{width:46px;height:46px}
+  .brand-badge{width:48px;height:48px}
+  .brand-badge img{width:42px;height:42px}
   .brand-name{font-size:22px}
-  .banner img{height:64px}
+  .banner img{height:52px}
   .intro-title{font-size:28px}
 }
