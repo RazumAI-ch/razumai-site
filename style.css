@@ -1,7 +1,7 @@
 /* File: style.css
-   Site styles for RazumAI. Updated masthead/brand logo sizing:
-   - Brand badge scales with masthead height
-   - Logo uses object-fit: contain with inner padding
+   Site styles for RazumAI. Updated:
+   - Masthead water overlay darker with gradient
+   - Buttons reverted to previous gradient/gray style
 */
 
 :root{
@@ -14,9 +14,8 @@
   --border:#203042;
   --max:1120px;
 
-  /* Control strip (masthead) height and logo padding */
-  --masthead-h: 96px;      /* adjust to make top strip taller/shorter */
-  --logo-pad: 8px;         /* inner breathing room inside the badge */
+  --masthead-h: 96px;
+  --logo-pad: 8px;
 }
 
 *{box-sizing:border-box}
@@ -34,11 +33,17 @@ a:hover{text-decoration:underline}
   position:relative;
   height:var(--masthead-h);
   border-bottom:1px solid var(--border);
-  background:url('assets/img/cover2.jpeg') center/cover no-repeat;
+  background:url('assets/img/cover3.png') center/cover no-repeat;
 }
 .masthead__overlay{
   position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(5,8,12,.15) 0%, rgba(5,8,12,.15) 100%);
+  /* darker bottom gradient overlay */
+  background:linear-gradient(
+    180deg,
+    rgba(5,8,12,0.92) 0%,
+    rgba(5,8,12,0.96) 60%,
+    rgba(5,8,12,1) 100%
+  );
 }
 
 /* Menu row */
@@ -47,10 +52,10 @@ a:hover{text-decoration:underline}
   height:100%;
   display:flex; align-items:center; justify-content:space-between;
   gap:12px;
-  padding:8px 24px;   /* horizontal + vertical breathing room */
+  padding:8px 24px;
 }
 
-/* ---------- Brand (responsive to masthead height) ---------- */
+/* ---------- Brand ---------- */
 .brand-box{display:flex;align-items:center;gap:12px}
 
 .brand-badge{
@@ -59,13 +64,11 @@ a:hover{text-decoration:underline}
   border-radius:12px;
   background:#fff;
   box-shadow:0 2px 6px rgba(0,0,0,.18);
-
   display:flex;
-  align-items:flex-start;   /* align to top */
-  justify-content:center;   /* keep it centered horizontally */
+  align-items:flex-start;
+  justify-content:center;
   padding: var(--logo-pad);
 }
-
 .brand-badge img{
   display:block;
   width:100%;
@@ -77,15 +80,20 @@ a:hover{text-decoration:underline}
   font-size:28px; font-weight:800; color:#fff; letter-spacing:.32px;
 }
 
-/* Menu links */
+/* ---------- Navigation Links ---------- */
 .nav-on-cover .menu a{
-  padding:6px 10px; border-radius:8px;
-  text-shadow:0 0 8px rgba(0,0,0,.3)
+  padding:6px 12px;
+  border-radius:8px;
+  color:#ffffff;
+  font-weight:600;
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
+  transition:background .15s ease, color .15s ease;
 }
 .nav-on-cover .menu a.active,
 .nav-on-cover .menu a:hover{
-  background:rgba(255,255,255,.08);
-  outline:1px solid rgba(255,255,255,.10)
+  background:rgba(255,255,255,.22);
+  color:#ffffff;
+  outline:1px solid rgba(255,255,255,.25);
 }
 
 /* ---------- Intro ---------- */
@@ -99,7 +107,7 @@ a:hover{text-decoration:underline}
 }
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 
-/* ---------- Buttons ---------- */
+/* ---------- Buttons (reverted) ---------- */
 
 /* Secondary (non-primary) */
 a.button, .cta a.button {
@@ -107,7 +115,7 @@ a.button, .cta a.button {
   padding:10px 14px;
   border-radius:12px;
   border:1px solid rgba(255,255,255,.14);
-  background:rgba(255,255,255,.12);         /* translucent panel */
+  background:rgba(255,255,255,.12);
   color:var(--text);
   font-weight:600;
   box-shadow:0 2px 8px rgba(0,0,0,.25);
@@ -157,7 +165,7 @@ a.button.primary:hover { filter:brightness(1.06); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
-  :root{ --masthead-h: 84px; }  /* badge shrinks automatically */
+  :root{ --masthead-h: 84px; }
   .brand-name{font-size:24px}
   .intro-title{font-size:28px}
 }
