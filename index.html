@@ -4,76 +4,88 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RazumAI — GxP AI for Pharma</title>
-    <meta name="description" content="RazumAI builds GxP-grade AI systems for pharmaceutical manufacturing: public GxP benchmarks, validated RAG, and inspection-ready deployments aligned to ALCOA+ and CSV/CSA." />
+    <title>RazumAI — Pharma GxP Data Quality Solutions</title>
+    <meta name="description" content="RazumAI builds auditable, security-first AI systems for pharmaceutical manufacturing: public GxP benchmarks, validated RAG, and inspection-ready deployments aligned to ALCOA+ and CSV/CSA." />
     <link rel="canonical" href="https://razumai.ch/" />
     <link rel="icon" href="assets/img/logo.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="home">
-    <!-- Masthead: the cover image is the masthead background (behind logo+menu) -->
-<header class="masthead">
-  <div class="masthead__overlay"></div>
-
-  <div class="container nav-inner nav-on-cover">
-    <div class="brand-box">
-      <div class="brand-badge">
-        <img src="assets/img/logo.png" alt="RazumAI logo" />
+    <!-- Masthead (no slogan change yet) -->
+    <header class="masthead">
+      <div class="masthead__overlay"></div>
+      <div class="container nav-inner nav-on-cover">
+        <div class="brand-box">
+          <div class="brand-badge">
+            <img src="assets/img/logo.png" alt="RazumAI logo" />
+          </div>
+          <span class="brand-name">RazumAI</span>
+        </div>
+        <nav class="menu" aria-label="Primary">
+          <a class="active" href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="contact.html">Contact</a>
+        </nav>
       </div>
-      <span class="brand-name">RazumAI</span>
-    </div>
+    </header>
 
-    <nav class="menu" aria-label="Primary">
-      <a class="active" href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-    <!-- Intro (no top padding pushing it away) -->
+    <!-- Hero -->
     <section class="intro container">
-      <h1 class="intro-title">GxP-grade AI for pharmaceutical manufacturing</h1>
-      <p class="lead">
-        RazumAI builds auditable AI systems for regulated pharma: a public
-        <strong>GxP benchmark</strong> for model quality, <strong>validated RAG</strong> with full
-        traceability, and <strong>inspection-ready deployments</strong> aligned to ALCOA+ and CSV/CSA.
-      </p>
+      <h1 class="intro-title">GxP-grade auditable AI for pharmaceutical manufacturing</h1>
       <div class="cta">
         <a class="button primary" href="solutions.html">Explore Solutions</a>
         <a class="button" href="about.html">About RazumAI</a>
       </div>
     </section>
 
+    <!-- Overview -->
+    <section class="section container">
+      <p>
+        RazumAI delivers a privacy-preserving, pharma-grade LLM for
+        <strong>GxP Data Validation</strong> — trained on production customer data, adaptable to
+        site-specific needs, and capable of generalizing across new companies.
+        <a href="https://en.wikipedia.org/wiki/Federated_learning">Federated GenAI training</a> keeps data within each client’s
+        secure IT environment while enabling regulators to run preliminary audits beyond our client base.
+      </p>
+
+      <p>
+        Our federated approach ensures that while raw data never leaves a company or site, every
+        interaction contributes to improving the shared base model. In this way, each client benefits
+        not only from their own training but also from accumulated “lessons learned” across the
+        network — much like how Google Search improves continuously from user interactions.
+        RazumAI data-quality solutions improve continuously as they are deployed across pharma,
+        becoming more accurate and reliable for all participants..
+      </p>
+    </section>
+
+    <!-- Offerings -->
     <section class="section container">
       <div class="grid">
         <div class="card" style="grid-column: span 6;">
           <h3>GenAI Recipe Audit Benchmark</h3>
-          <p>Evaluate LLMs on ALCOA+ deviations and pharma QA. Transparent, reproducible, and defendable.</p>
+          <p>Evaluate LLMs against ALCOA+ deviations and pharma QA. Transparent, reproducible, and defensible.</p>
         </div>
+
         <div class="card" style="grid-column: span 6;">
           <h3>Validated RAG for Pharma</h3>
           <p>Retrieval-augmented generation with immutable history, evidence links, and audit trails.</p>
         </div>
+
         <div class="card" style="grid-column: span 6;">
           <h3>From Prototype to Validation</h3>
-          <p>We move teams from POC to compliant production: requirements, risk assessments, SOPs, validation packs.</p>
+          <p>Move from PoC to compliant production: requirements, risk assessments, SOPs, and full validation packs.</p>
         </div>
+
         <div class="card" style="grid-column: span 6;">
           <h3>Cloud-ready</h3>
-          <p>Architected for GCP, AWS, and on-prem. Emphasis on cost visibility, model comparability, and observability.</p>
+          <p>Architected for GCP, AWS, and on-prem with cost visibility, model comparability, and observability.</p>
         </div>
-      </div>
-
-      <div class="kpis">
-        <div class="kpi"><div class="num">GxP1</div><div>ALCOA+ score in evaluation</div></div>
-        <div class="kpi"><div class="num">10k+</div><div>Records per run</div></div>
-        <div class="kpi"><div class="num">CSV-ready</div><div>Docs & templates</div></div>
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <small>© 2025 RazumAI — Razum GmbH, Switzerland. All rights reserved.</small>
