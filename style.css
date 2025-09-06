@@ -53,19 +53,19 @@ a:hover{text-decoration:underline}
 /* ---------- Brand (responsive to masthead height) ---------- */
 .brand-box{display:flex;align-items:center;gap:12px}
 
-/* Badge scales with masthead height so the logo always fits */
 .brand-badge{
   width: calc(var(--masthead-h) - 20px);
   height: calc(var(--masthead-h) - 20px);
   border-radius:12px;
   background:#fff;
-  border:2px solid #fff;
   box-shadow:0 2px 6px rgba(0,0,0,.18);
-  display:grid; place-items:center;
+
+  display:flex;
+  align-items:flex-start;   /* align to top */
+  justify-content:center;   /* keep it centered horizontally */
   padding: var(--logo-pad);
 }
 
-/* Image fills badge without distortion */
 .brand-badge img{
   display:block;
   width:100%;
