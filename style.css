@@ -40,9 +40,9 @@ a:hover{text-decoration:underline}
   /* darker bottom gradient overlay */
   background:linear-gradient(
     180deg,
-    rgba(5,8,12,0.92) 0%,
-    rgba(5,8,12,0.96) 60%,
-    rgba(5,8,12,1) 100%
+    rgba(5,8,12,0.3) 0%,
+    rgba(5,8,12,0.5) 60%,
+    rgba(5,8,12,0.6) 100%
   );
 }
 
