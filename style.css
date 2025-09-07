@@ -1,5 +1,5 @@
 /* File: style.css
-   Site styles for RazumAI. Updated:
+   Site styles for RazumAI.
    - Masthead water overlay darker with gradient
    - Buttons reverted to previous gradient/gray style
 */
@@ -37,7 +37,6 @@ a:hover{text-decoration:underline}
 }
 .masthead__overlay{
   position:absolute; inset:0;
-  /* darker bottom gradient overlay */
   background:linear-gradient(
     180deg,
     rgba(5,8,12,0.1) 0%,
@@ -80,9 +79,7 @@ a:hover{text-decoration:underline}
   font-size:28px; font-weight:800; color:#fff; letter-spacing:.32px;
 }
 
-.brand-ai {
-  color: #ff7a1a;   /* orange accent */
-}
+.brand-ai { color: #ff7a1a; }
 
 /* ---------- Navigation Links ---------- */
 .nav-on-cover .menu a{
@@ -112,8 +109,6 @@ a:hover{text-decoration:underline}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 
 /* ---------- Buttons (reverted) ---------- */
-
-/* Secondary (non-primary) */
 a.button, .cta a.button {
   display:inline-block;
   padding:10px 14px;
@@ -129,7 +124,6 @@ a.button:hover, .cta a.button:hover {
   background:rgba(255,255,255,.18);
 }
 
-/* Primary */
 a.button.primary, .cta a.button.primary {
   background:linear-gradient(135deg,#53ffa9,#5cc8ff);
   color:#0b0f14;
@@ -172,4 +166,36 @@ a.button.primary:hover { filter:brightness(1.06); }
   :root{ --masthead-h: 84px; }
   .brand-name{font-size:24px}
   .intro-title{font-size:28px}
+  .two-col{grid-template-columns:1fr}
+}
+
+/* ---------- About page additions ---------- */
+.info-box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;   /* top align text with logo beside it */
+  gap: 14px;
+}
+
+.info-box__media img {
+  display: block;
+  width: 220px;
+  max-width: 36vw;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 8px;
+}
+
+@media (max-width: 900px){
+  .info-box {
+    grid-template-columns: 1fr;
+  }
+  .info-box__media img {
+    width: 180px;
+    margin-top: 6px;
+    justify-self: start;
+  }
 }
