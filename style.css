@@ -199,3 +199,15 @@ a.button.primary:hover { filter:brightness(1.06); }
     justify-self: start;
   }
 }
+
+.slogan {
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--sub); /* softer gray, matches your existing lead style */
+  margin: 20px 0;
+  display: block;
+}
+
+/* Add comfortable spacing between stacked cards on any page */
+.card + .card { margin-top: 16px; }
