@@ -22,7 +22,6 @@
           <div class="brand-name">
             Razum<span class="brand-ai">AI</span>
           </div>
-
         </div>
 
         <nav class="menu" aria-label="Primary">
@@ -41,21 +40,29 @@
         We welcome collaboration with pharma manufacturers, tech providers, and research groups.
       </p>
 
-      <div class="two-col">
-        <div class="card">
-          <h3>Email</h3>
-          <p><a href="mailto:info@razumai.ch">info@razumai.ch</a></p>
-        </div>
-        <div class="card">
-          <h3>Company</h3>
-          <p>Razum GmbH · Switzerland</p>
-        </div>
-      </div>
+      <!-- Force 2 columns without relying on .two-col/grid -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top">
+          <td width="49%">
+            <div class="card">
+              <h3>Email</h3>
+              <p><a href="mailto:info@razumai.ch">info@razumai.ch</a></p>
+            </div>
+          </td>
+          <td>&nbsp;</td>
+          <td width="49%">
+            <div class="card">
+              <h3>Company</h3>
+              <p>Razum GmbH · Switzerland</p>
+            </div>
+          </td>
+        </tr>
+      </table>
 
       <div class="card" style="margin-top:14px">
         <h3>LinkedIn</h3>
         <p>
-          <a href="https://www.linkedin.com/company/18316634/" target="_blank">
+          <a href="https://www.linkedin.com/company/18316634/" target="_blank" rel="noopener">
             Visit RazumAI on LinkedIn
           </a>
         </p>

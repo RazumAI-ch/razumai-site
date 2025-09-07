@@ -19,7 +19,6 @@
           <div class="brand-badge">
             <img src="assets/img/99d_winning_design_logo1.png" alt="RazumAI logo" />
           </div>
-
           <div class="brand-name">
             Razum<span class="brand-ai">AI</span>
           </div>
@@ -36,62 +35,98 @@
 
     <!-- Page content -->
     <section class="section container">
-      <h2 class="h2">About RazumAI</h2>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <!-- Header row -->
+        <tr>
+          <td colspan="3">
+            <h2 class="h2">About RazumAI</h2>
+            <p class="slogan">“Pilots are easy, production is hard — what matters most is the speed of innovation.”</p>
+          </td>
+        </tr>
 
-      <!-- Slogan as belief statement -->
-      <p class="slogan">
-        [Pilots are easy, production is hard, what matters most is the speed of innovation]
-      </p>
+        <!-- Main row: TEXT (60%) | SPACER (40px) | QUOTES -->
+        <tr valign="top">
+          <!-- LEFT: all paragraphs together -->
+          <td width="50%">
+            <p style="text-align:justify; max-width:none; margin-top:0;">
+              Continuous interactions with our system make the system smarter over time. Each correction, each flagged record,
+              and each validation helps the AI recognize similar issues more effectively in the future.
+            </p>
 
-      <!-- Main copy -->
-      <p>
-        Continuous interactions with our system make the system smarter over time. Each correction, each flagged record,
-        and each validation helps the AI recognize similar issues more effectively in the future.
-      </p>
+            <p style="text-align:justify; max-width:none;">
+              This creates a <strong>network effect</strong>: the data itself never leaves your environment, but the
+              <strong>learnings do</strong>. Every site and every company benefits from what others have taught the system.
+              In-house tools can fix local problems, but they cannot share knowledge industry-wide.
+            </p>
 
-      <p>
-        This creates a <strong>network effect</strong>: the data itself never leaves your environment, but the <strong>learnings do</strong>.
-        Every site and every company benefits from what others have taught the system. In-house tools can fix local problems,
-        but they cannot share knowledge industry-wide. By working through RazumAI, your team’s efforts raise quality standards beyond your own walls,
-        accelerating safer outcomes for everyone.
-      </p>
+            <p style="text-align:justify; max-width:none;">
+              This is possible because our solutions are
+              <a href="https://en.wikipedia.org/wiki/Federated_learning">federated by design</a>.
+              <strong>Data stays on-prem or in your secure cloud</strong>, while only learned patterns about data quality are shared —
+              never proprietary content or IP. Much like Google Search improves with every user interaction, our base model becomes
+              stronger as more companies use it — continuously improving pharma’s ability to safeguard data quality and patient safety.
+            </p>
+          </td>
 
-      <p>
-        This is possible because our solutions are <a href="https://en.wikipedia.org/wiki/Federated_learning">federated by design</a>.
-        Data stays on-prem or in your secure cloud environment, while only learned patterns are shared.
-        Much like Google Search improves with every user interaction, our base model becomes stronger as more companies use it —
-        continuously improving pharma’s ability to safeguard data quality and patient safety.
-      </p>
+          <!-- SPACER: same as home -->
+          <td width="40" style="width:40px;">&nbsp;</td>
 
-            <!-- CTA -->
-      <div class="cta" style="margin-top:20px">
-        <a href="solutions.html" class="button primary">Explore our solutions</a>
-      </div>
+          <!-- RIGHT: both quotes stacked -->
+          <td style="padding-top:8px;">
+            <blockquote style="font-size:28px;font-weight:700;line-height:1.5;margin:0;text-align:justify;">
+              “By working through RazumAI, your team’s efforts raise quality standards beyond your walls — and you benefit from everyone else’s lessons.”
+            </blockquote>
 
-      <br/>
-      <!-- Curious fact box -->
-      <!-- Curious fact box -->
-      <div class="card info-box" aria-labelledby="logo-fact-title" style="margin-top:20px">
-        <div class="info-box__text">
-          <h3 id="logo-fact-title">Curious fact — our logo</h3>
-          <p>
-            Our logo represents a <strong>Pandora’s box with AI inside</strong> — the orange color for AI transformative energy,
-            the blue frame for pharma’s rigor and care, and the lid open to show that, for good or for bad, the box of AI is already open and there is no going back.
-          </p>
-          <p>
-            On the outside you can see the letters <strong>R</strong> and <strong>AI</strong>, while on the lid sits <strong>myoglobin</strong> —
-            the first protein ever solved, chosen because it is both iconic and simple enough to be visualized.
-            Myoglobin is a deliberate <strong>homage to Google DeepMind’s AlphaFold</strong>, which proved that AI could solve protein folding at scale
-            and revolutionize biology and medicine. In the same spirit, we believe AI can transform <strong>pharma data quality</strong>,
-            making it safe, productive, and cost-efficient.
-          </p>
-        </div>
-        <div class="info-box__media">
-          <img src="assets/img/99d_winning_design_logo1.png"
-               alt="RazumAI logo showing R on the left face, AI on the right, and myoglobin outline on the lid" />
-        </div>
-      </div>
+            <br/>
 
+            <blockquote style="font-size:28px;font-weight:700;line-height:1.5;margin:0;text-align:justify;">
+              “Your data never leaves your company — only <em>lessons about data quality</em> are shared (never your IP).”
+            </blockquote>
+          </td>
+        </tr>
+
+        <!-- CTA row -->
+        <tr>
+          <td colspan="3">
+            <div class="cta" style="margin-top:14px">
+              <a href="solutions.html" class="button primary">Explore our solutions</a>
+            </div>
+            <br/>
+          </td>
+        </tr>
+
+        <!-- Curious fact — ONE merged full-width box; inner layout as before -->
+        <tr>
+          <td colspan="3">
+            <div class="card" style="margin-top:4px">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr valign="top">
+                  <td>
+                    <h3>Curious fact — our logo</h3>
+                    <p style="text-align:justify;">
+                      Our logo represents a <strong>Pandora’s box with AI inside</strong> — the orange color for AI’s transformative energy,
+                      the blue frame for pharma’s rigor and care, and the lid open to show that, for good or for bad, the box of AI is already open.
+                    </p>
+                    <p style="text-align:justify;">
+                      On the outside you can see the letters <strong>R</strong> and <strong>AI</strong>, while on the lid sits
+                      <strong>myoglobin</strong> — the first protein ever solved, chosen because it is both iconic and simple enough to be visualized.
+                      The primary purpose of including myoglobin, though, is as an homage to <strong>Google DeepMind’s AlphaFold</strong>,
+                      which proved that AI could solve real-life <strong>critical challenges</strong> in pharma such as protein folding.
+                    </p>
+                  </td>
+                  <td align="right" style="white-space:nowrap;">
+                    <img
+                      src="assets/img/99d_winning_design_logo1.png"
+                      alt="RazumAI logo showing R on the left face, AI on the right, and myoglobin outline on the lid"
+                      style="display:block;width:260px;height:auto;border-radius:12px;background:#fff;border:1px solid var(--border);padding:8px;margin-left:24px;"
+                    />
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
     </section>
 
     <footer class="footer">

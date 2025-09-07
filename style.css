@@ -1,7 +1,7 @@
 /* File: style.css
    Site styles for RazumAI.
-   Updated: unified button styles, equal-height solution cards,
-   simplified "see also" label styling.
+   Updated: mission prominence, hero spacing, pull quotes (global),
+   narrower text columns for readability.
 */
 
 :root {
@@ -96,9 +96,15 @@ a:hover{text-decoration:underline}
   outline:1px solid rgba(255,255,255,.25);
 }
 
-/* ---------- Intro ---------- */
+/* ---------- Intro / Hero ---------- */
 .intro{padding:18px 24px 6px}
-.intro-title{font-size:32px;line-height:1.2;margin:6px 0 10px}
+.intro-title{
+  font-size:38px;
+  line-height:1.15;
+  font-weight:800;
+  letter-spacing:.2px;
+  margin:0 0 22px;
+}
 .lead{color:var(--sub);max-width:880px;margin:0 0 16px}
 .tag{
   display:inline-block;padding:4px 8px;border-radius:999px;
@@ -106,6 +112,14 @@ a:hover{text-decoration:underline}
   font-size:12px;color:var(--accent);margin-bottom:6px
 }
 .cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Narrower hero/about columns */
+.home .intro p,
+.about-body p{
+  max-width:550px;
+  margin-bottom:16px;
+}
+.intro .cta{ margin-top:24px; }
 
 /* ---------- Buttons ---------- */
 a.button, .cta a.button {
@@ -122,7 +136,6 @@ a.button, .cta a.button {
 a.button:hover, .cta a.button:hover {
   background:rgba(255,255,255,.18);
 }
-
 a.button.primary, .cta a.button.primary {
   background:linear-gradient(135deg,#53ffa9,#5cc8ff);
   color:#0b0f14;
@@ -141,14 +154,6 @@ a.button.primary:hover { filter:brightness(1.06); }
   backdrop-filter:saturate(140%) blur(2px)
 }
 .card h3{margin:0 0 6px}
-
-.kpis{margin-top:18px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.kpi{
-  grid-column:span 4;background:var(--muted);
-  border:1px dashed var(--border);border-radius:14px;padding:12px
-}
-.kpi .num{font-size:26px;font-weight:700}
-
 .section{padding:24px}
 .h2{font-size:28px;margin:0 0 12px}
 .list{display:grid;gap:12px;margin:12px 0;padding:0}
@@ -156,7 +161,6 @@ a.button.primary:hover { filter:brightness(1.06); }
   list-style:none;background:var(--muted);border:1px solid var(--border);
   padding:12px;border-radius:12px
 }
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .footer{margin-top:40px;border-top:1px solid var(--border);background:var(--muted)}
 .footer small{color:var(--sub)}
 
@@ -164,8 +168,7 @@ a.button.primary:hover { filter:brightness(1.06); }
 @media (max-width: 900px){
   :root{ --masthead-h: 84px; }
   .brand-name{font-size:24px}
-  .intro-title{font-size:28px}
-  .two-col{grid-template-columns:1fr}
+  .intro-title{font-size:30px}
 }
 
 /* ---------- About page additions ---------- */
@@ -177,7 +180,6 @@ a.button.primary:hover { filter:brightness(1.06); }
   margin: 20px 0;
   display: block;
 }
-
 .info-box {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -190,17 +192,17 @@ a.button.primary:hover { filter:brightness(1.06); }
   max-width: 40vw;
   height: auto;
   border-radius: 12px;
-  object-fit: contain;
-  border: 1px solid var(--border);
-  background: #fff;
-  padding: 8px;
+  object-fit:contain;
+  border:1px solid var(--border);
+  background:#fff;
+  padding:8px;
 }
 @media (max-width: 900px){
-  .info-box { grid-template-columns: 1fr; }
+  .info-box { grid-template-columns:1fr; }
   .info-box__media img {
-    width: 200px;
-    margin-top: 6px;
-    justify-self: start;
+    width:200px;
+    margin-top:6px;
+    justify-self:start;
   }
 }
 
@@ -232,15 +234,74 @@ a.button.primary:hover { filter:brightness(1.06); }
   color:var(--text);
 }
 
-/* Hero / mission spacing refinements */
-.intro-title {
-  margin-bottom: 25px; /* default might be ~28px; reduced to ~65% */
+/* ---------- Pull quotes (magazine-style highlights) ---------- */
+.pull-quote{
+  float:right;
+  width:40%;
+  font-size:28px;
+  font-weight:700;
+  line-height:1.4;
+  color:var(--text);
+  margin:0 0 16px 24px;
+}
+.home .intro::after,
+.about-body::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+@media (max-width:900px){
+  .pull-quote{
+    float:none;
+    width:100%;
+    margin:18px 0;
+    font-size:24px;
+  }
 }
 
-.intro p {
-  margin-bottom: 16px; /* balanced vertical rhythm for paragraphs */
+/* Right-side pull-quote stack (prevents floats colliding) */
+.pull-quote-stack{
+  float: right;
+  width: 40%;
+  margin-left: 24px;
+}
+.pull-quote-stack .pull-quote{
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0 0 18px 0;
 }
 
-.intro .cta {
-  margin-top: 30px; /* was 28px+, now ~65% spacing */
+/* Keep left column clean & clear the float at section end */
+.about-body p{ max-width: 550px; }
+.about-body::after{ content:""; display:block; clear:both; }
+
+/* Mobile: stack quotes inline */
+@media (max-width: 900px){
+  .pull-quote-stack{
+    float: none;
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+  .pull-quote-stack .pull-quote{ font-size: 24px; }
+}
+
+/* Pull-quote modifiers for About page */
+.pull-quote--top { /* sits near slogan; optional fine-tune */
+  margin-top: 0;
+}
+
+.pull-quote--after {
+  clear: right;          /* forces this quote to start below any earlier right floats */
+  margin-top: 6px;       /* small breathing room from the paragraph block */
+}
+
+/* Keep left column tidy and clear floats at the end of the section (already present) */
+.about-body p { max-width: 550px; }
+.about-body::after { content:""; display:block; clear:both; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em; /* keep paragraph spacing */
 }
