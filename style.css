@@ -173,14 +173,14 @@ a.button.primary:hover { filter:brightness(1.06); }
 .info-box {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: start;   /* top align text with logo beside it */
+  align-items: center;   /* center logo with text */
   gap: 14px;
 }
 
 .info-box__media img {
   display: block;
-  width: 220px;
-  max-width: 36vw;
+  width: 260px;          /* larger logo size as we discussed */
+  max-width: 40vw;
   height: auto;
   border-radius: 12px;
   object-fit: contain;
@@ -194,7 +194,7 @@ a.button.primary:hover { filter:brightness(1.06); }
     grid-template-columns: 1fr;
   }
   .info-box__media img {
-    width: 180px;
+    width: 200px;
     margin-top: 6px;
     justify-self: start;
   }
