@@ -231,3 +231,16 @@ a.button.primary:hover { filter:brightness(1.06); }
   font-weight:600;
   color:var(--text);
 }
+
+/* Hero / mission spacing refinements */
+.intro-title {
+  margin-bottom: 25px; /* default might be ~28px; reduced to ~65% */
+}
+
+.intro p {
+  margin-bottom: 16px; /* balanced vertical rhythm for paragraphs */
+}
+
+.intro .cta {
+  margin-top: 30px; /* was 28px+, now ~65% spacing */
+}
