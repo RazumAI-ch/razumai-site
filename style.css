@@ -33,7 +33,7 @@ a:hover{text-decoration:underline}
   position:relative;
   height:var(--masthead-h);
   border-bottom:1px solid var(--border);
-  background:url('assets/img/cover3.png') center/cover no-repeat;
+  background:url('assets/img/cover2.jpeg') center/cover no-repeat;
 }
 .masthead__overlay{
   position:absolute; inset:0;
@@ -78,6 +78,10 @@ a:hover{text-decoration:underline}
 
 .brand-name{
   font-size:28px; font-weight:800; color:#fff; letter-spacing:.32px;
+}
+
+.brand-ai {
+  color: #ff7a1a;   /* orange accent */
 }
 
 /* ---------- Navigation Links ---------- */
