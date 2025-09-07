@@ -1,10 +1,10 @@
 /* File: style.css
    Site styles for RazumAI.
-   - Masthead water overlay darker with gradient
-   - Buttons reverted to previous gradient/gray style
+   Updated: unified button styles, equal-height solution cards,
+   simplified "see also" label styling.
 */
 
-:root{
+:root {
   --bg:#0b0f14;
   --card:#121821;
   --text:#e6edf3;
@@ -78,8 +78,7 @@ a:hover{text-decoration:underline}
 .brand-name{
   font-size:28px; font-weight:800; color:#fff; letter-spacing:.32px;
 }
-
-.brand-ai { color: #ff7a1a; }
+.brand-ai { color:#ff7a1a; }
 
 /* ---------- Navigation Links ---------- */
 .nav-on-cover .menu a{
@@ -108,7 +107,7 @@ a:hover{text-decoration:underline}
 }
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 
-/* ---------- Buttons (reverted) ---------- */
+/* ---------- Buttons ---------- */
 a.button, .cta a.button {
   display:inline-block;
   padding:10px 14px;
@@ -170,16 +169,24 @@ a.button.primary:hover { filter:brightness(1.06); }
 }
 
 /* ---------- About page additions ---------- */
+.slogan {
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--sub);
+  margin: 20px 0;
+  display: block;
+}
+
 .info-box {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;   /* center logo with text */
+  align-items: start;
   gap: 14px;
 }
-
 .info-box__media img {
   display: block;
-  width: 260px;          /* larger logo size as we discussed */
+  width: 260px;
   max-width: 40vw;
   height: auto;
   border-radius: 12px;
@@ -188,11 +195,8 @@ a.button.primary:hover { filter:brightness(1.06); }
   background: #fff;
   padding: 8px;
 }
-
 @media (max-width: 900px){
-  .info-box {
-    grid-template-columns: 1fr;
-  }
+  .info-box { grid-template-columns: 1fr; }
   .info-box__media img {
     width: 200px;
     margin-top: 6px;
@@ -200,14 +204,30 @@ a.button.primary:hover { filter:brightness(1.06); }
   }
 }
 
-.slogan {
-  font-style: italic;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--sub); /* softer gray, matches your existing lead style */
-  margin: 20px 0;
-  display: block;
+/* ---------- Solutions page additions ---------- */
+.solutions-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  align-items:stretch;
+}
+.solutions-grid .card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.solutions-grid .card .cta{
+  margin-top:auto;
+  display:flex;
+  gap:10px;
+}
+@media (max-width:900px){
+  .solutions-grid{grid-template-columns:1fr;}
 }
 
-/* Add comfortable spacing between stacked cards on any page */
-.card + .card { margin-top: 16px; }
+/* Unified "see also" label */
+.see-also {
+  margin:18px 0 6px;
+  font-weight:600;
+  color:var(--text);
+}

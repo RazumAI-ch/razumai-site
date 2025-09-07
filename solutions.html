@@ -7,6 +7,29 @@
     <title>Solutions — RazumAI</title>
     <link rel="icon" href="assets/img/99d_winning_design_logo1.png" />
     <link rel="stylesheet" href="style.css">
+    <style>
+      /* Keep the two core cards equal height and tidy */
+      .solutions-grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:16px;
+        align-items:stretch;
+      }
+      .solutions-grid .card{
+        display:flex;              /* make internal layout flexible */
+        flex-direction:column;
+        height:100%;               /* equalize heights */
+      }
+      .solutions-grid .card .cta{ margin-top:auto; } /* pin buttons to bottom */
+      @media (max-width:900px){
+        .solutions-grid{ grid-template-columns:1fr; }
+      }
+      .see-also{
+        color:var(--sub);
+        margin:18px 0 6px;
+        font-weight:600;
+      }
+    </style>
   </head>
   <body>
     <!-- Masthead -->
@@ -36,70 +59,51 @@
     <section class="section container">
       <h2 class="h2">Solutions</h2>
       <p>
-        Here’s what we deliver. For our philosophy and federated approach, see the
-        <a href="about.html">About</a> page.
+        Request a <strong>free pilot</strong> for either of the core solutions below. We install in your environment at no cost,
+        so you can see value with your own data.
       </p>
 
-      <!-- Free pilot banner -->
-      <div class="card" style="margin-top:12px">
-        <strong>Free pilot:</strong> we install our basic validator in your environment at no cost.
-        Start with your data, keep your data on-prem or in your secure cloud, and see results quickly.
-        <div class="cta" style="margin-top:8px">
-          <a class="button primary" href="contact.html">Get started</a>
+      <!-- Two-column core offerings -->
+      <div class="solutions-grid" style="margin-top:16px">
+        <!-- Left: GxP Validator -->
+        <div class="card">
+          <h3>GxP Recipe Data Validator</h3>
+          <p>
+            Pharma-grade AI that detects, explains, and prevents data-quality issues in regulated manufacturing records.
+            <strong>Federated by design:</strong> raw data stays with you; only learned patterns are shared.
+            Not a blank slate—meaningful results on day one; improves continuously with use.
+          </p>
+          <div class="cta" style="display:flex; gap:10px;">
+            <a class="button primary" href="contact.html">Request pilot</a>
+            <a class="button" href="https://github.com/RazumAI-ch/recipe-quality-validator">View on GitHub</a>
+
+          </div>
+        </div>
+
+        <!-- Right: AI Logs Reporting Solution -->
+        <div class="card">
+          <h3>AI Logs Reporting Solution</h3>
+          <p>
+            Natural-language reporting over your application logs. We train a small, purpose-built model on your log type
+            so leadership can ask questions in plain English and see consolidated insights. Minimal setup, fast impact.
+          </p>
+          <div class="cta">
+            <a class="button primary" href="contact.html">Request pilot</a>
+          </div>
         </div>
       </div>
 
-      <!-- 1) Validator (core product) -->
-      <div class="card" style="margin-top:16px">
-        <h3>GxP Recipe Data Validator</h3>
-        <p>
-          Pharma-grade AI that detects, explains, and prevents data-quality issues in regulated
-          manufacturing records.
-        </p>
-        <ul class="list">
-          <li><strong>Federated by design:</strong> raw data stays in your environment; only learned patterns are shared.</li>
-          <li><strong>Audit-ready:</strong> ALCOA+, explainable outputs, deterministic logs, validation hooks.</li>
-          <li><strong>Not a blank slate:</strong> meaningful results on day one; improves continuously with use.</li>
-          <li><strong>Deployment:</strong> on-prem or secure cloud; integrates with existing workflows.</li>
-        </ul>
-        <div class="cta" style="margin-top:8px; gap:10px">
-          <a class="button" href="https://github.com/RazumAI-ch/recipe-quality-validator">View on GitHub</a>
-          <a class="button primary" href="contact.html">Talk to us</a>
-        </div>
-      </div>
-
-      <!-- 2) Benchmark -->
-      <div class="card" style="margin-top:16px">
+      <!-- See also: benchmark -->
+      <div class="see-also">See also our non-commercial offering</div>
+      <div class="card">
         <h3>GenAI Recipe Audit Benchmark</h3>
         <p>
-          Independent evaluation of models on ALCOA+ deviations (GxP1) to make model choices defensible.
+          Independent evaluation of models on ALCOA+ deviations (GxP1). Normalized quality scores, reproducible tests with evidence logs,
+          and transparent cost/performance comparisons—useful for procurement, validation, and governance reviews.
         </p>
-        <ul class="list">
-          <li>Normalized quality scores; cost/performance comparisons</li>
-          <li>Reproducible tests with evidence logs and defect taxonomy</li>
-          <li>Useful for procurement, validation, and governance reviews</li>
-        </ul>
-        <div class="cta" style="margin-top:8px">
-          <a class="button" href="https://github.com/RazumAI-ch/genai-recipe-audit-benchmark">View on GitHub</a>
-        </div>
-      </div>
-
-      <!-- 3) Logs Intelligence Pilot (quick win) -->
-      <div class="card" style="margin-top:16px">
-        <h3>Logs Intelligence Pilot (quick win)</h3>
         <p>
-          A fast, low-cost pilot to unlock natural-language queries over your critical app logs. We train a
-          small, purpose-built model for your log type so leadership can ask questions in plain English and
-          see consolidated results.
+          <a class="button" href="https://github.com/RazumAI-ch/genai-recipe-audit-benchmark">View on GitHub</a>
         </p>
-        <ul class="list">
-          <li>Target 1–2 systems to start; minimal user footprint; security-sensitive by design</li>
-          <li>Rapid setup; measurable insight for management without new tooling for teams</li>
-          <li>Great way to test how our approach fits your environment</li>
-        </ul>
-        <div class="cta" style="margin-top:8px">
-          <a class="button primary" href="contact.html">Request the pilot</a>
-        </div>
       </div>
     </section>
 
