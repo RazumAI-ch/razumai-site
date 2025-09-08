@@ -44,7 +44,7 @@
           </td>
         </tr>
 
-        <!-- Main row: TEXT (60%) | SPACER (40px) | QUOTES -->
+        <!-- Main row: TEXT (50%) | SPACER (40px) | QUOTES -->
         <tr valign="top">
           <!-- LEFT: all paragraphs together -->
           <td width="50%">
@@ -68,7 +68,7 @@
             </p>
           </td>
 
-          <!-- SPACER: same as home -->
+          <!-- SPACER -->
           <td width="40" style="width:40px;">&nbsp;</td>
 
           <!-- RIGHT: both quotes stacked -->
@@ -95,30 +95,51 @@
           </td>
         </tr>
 
-        <!-- Curious fact — ONE merged full-width box; inner layout as before -->
+        <!-- Curious fact — full-width card; internal layout: Title row (merged), then 3-column row (text | spacer | logo) -->
         <tr>
           <td colspan="3">
             <div class="card" style="margin-top:4px">
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr valign="top">
-                  <td>
+                <!-- Row 1: Title (merged across 3 columns) -->
+                <tr>
+                  <td colspan="3">
                     <h3>Curious fact — our logo</h3>
+                  </td>
+                </tr>
+
+                <!-- Row 2: 3 columns aligned at the top: TEXT | SPACER | LOGO -->
+                <tr valign="top">
+                  <!-- COL 1: Text -->
+                  <td width="70%">
                     <p style="text-align:justify;">
-                      Our logo represents a <strong>Pandora’s box with AI inside</strong> — the orange color for AI’s transformative energy,
-                      the blue frame for pharma’s rigor and care, and the lid open to show that, for good or for bad, the box of AI is already open.
+                      Our logo is inspired by <strong>Pandora’s box</strong> and the force that had been hidden inside it is <strong>AI</strong>.
+                      The lid is now open: for good or for bad, AI is out in the world and there is no going back.
+                      At <strong>RazumAI</strong>, we are here to help pharma <strong>harness that energy</strong> — in a safe and responsible way.
                     </p>
+
                     <p style="text-align:justify;">
-                      On the outside you can see the letters <strong>R</strong> and <strong>AI</strong>, while on the lid sits
-                      <strong>myoglobin</strong> — the first protein ever solved, chosen because it is both iconic and simple enough to be visualized.
-                      The primary purpose of including myoglobin, though, is as an homage to <strong>Google DeepMind’s AlphaFold</strong>,
-                      which proved that AI could solve real-life <strong>critical challenges</strong> in pharma such as protein folding.
+                      The <strong>inside</strong> of the box is rendered in <strong>orange</strong> to symbolize AI’s transformative energy,
+                      while the <strong>outside</strong> of the box is done in <strong>blue</strong> to reflect pharma’s rigor and care.
+                      Subtle artistic impressions of the letters <strong>R</strong> and <strong>AI</strong> are embedded in the outer walls,
+                      referencing the company’s name.
+                    </p>
+
+                    <p style="text-align:justify;">
+                      The <strong>lid features the structure of myoglobin</strong> — the first protein structure ever solved.
+                      Its inclusion pays homage to <strong>Google DeepMind’s AlphaFold</strong>, which showed that AI can solve real-life
+                      <strong>critical challenges</strong> in pharma, such as protein folding, profoundly shaping modern drug discovery.
                     </p>
                   </td>
+
+                  <!-- COL 2: Spacer (40px, consistent with page) -->
+                  <td width="40" style="width:40px;">&nbsp;</td>
+
+                  <!-- COL 3: Logo (top-aligned with text) -->
                   <td align="right" style="white-space:nowrap;">
                     <img
                       src="assets/img/99d_winning_design_logo1.png"
                       alt="RazumAI logo showing R on the left face, AI on the right, and myoglobin outline on the lid"
-                      style="display:block;width:260px;height:auto;border-radius:12px;background:#fff;border:1px solid var(--border);padding:8px;margin-left:24px;"
+                      style="display:block;width:260px;height:auto;border-radius:12px;background:#fff;border:1px solid var(--border);"
                     />
                   </td>
                 </tr>
