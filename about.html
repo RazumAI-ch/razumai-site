@@ -7,30 +7,35 @@
     <title>About — RazumAI</title>
     <link rel="icon" href="assets/img/99d_winning_design_logo1.png" />
     <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts: Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
     <style>
-      /* Optional: nicer summary row to look like your cards */
-      .disclosure.card { padding: 0; }
-      .disclosure > summary {
-        list-style: none; /* hide default marker so we can restyle */
+      body {
+        font-family: 'Lato', sans-serif;
+        font-weight: 400; /* default: regular */
+      }
+      .curious-summary {
         cursor: pointer;
-        padding: 12px 16px;
-        border-bottom: 1px solid var(--border);
-        display: flex; align-items: center; gap: 10px;
-        border-radius: 12px;
+        font-weight: 300; /* light */
+        color: #777;      /* gray */
+        line-height: 1.4;
       }
-      .disclosure > summary::before {
-        content: "▸";
-        transition: transform .15s ease;
-        font-size: 16px;
-        line-height: 1;
+      .curious-hint {
+        font-weight: 300;
+        font-size: 0.85em;
+        color: #999;
       }
-      .disclosure[open] > summary::before { transform: rotate(90deg); }
-      /* Keep card look when open */
-      .disclosure-inner { padding: 12px 16px 16px; }
-      /* Remove default triangle in Safari while keeping accessibility */
-      summary::-webkit-details-marker { display: none; }
-      /* Tighten table spacing inside disclosure */
-      .logo-table { border-collapse: collapse; width: 100%; }
+      .curious-content {
+        margin-top: 8px;
+        font-size: 0.9em;
+        font-weight: 300; /* light */
+        color: #555;
+        line-height: 1.5;
+      }
+      footer small {
+        font-weight: 100; /* thin */
+        color: #777;
+      }
     </style>
   </head>
 
@@ -65,7 +70,7 @@
         <tr>
           <td colspan="3">
             <h2 class="h2">About RazumAI</h2>
-            <p class="slogan">“Pilots are easy, production is hard — what matters most is the speed of innovation.”</p>
+            <p class="slogan">[Pilots are easy, production is hard — what matters most is the speed of innovation.]</p>
           </td>
         </tr>
 
@@ -120,21 +125,20 @@
           </td>
         </tr>
 
-        <!-- Curious fact — collapsible card -->
+        <!-- Curious fact — lightweight disclosure -->
         <tr>
           <td colspan="3">
-            <details class="card disclosure" style="margin-top:4px;">
-              <summary>
-                <h3 style="margin:0;">Curious fact — our logo (click to learn more)</h3>
+            <details style="margin-top:6px;">
+              <summary class="curious-summary">
+                Curious fact — our logo <span class="curious-hint">(click to learn more)</span>
               </summary>
 
-              <div class="disclosure-inner">
-                <!-- Title row already in summary; now the 3-column layout: TEXT | SPACER | LOGO -->
-                <table class="logo-table" border="0" cellspacing="0" cellpadding="0">
+              <div class="curious-content">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
                   <tr valign="top">
                     <!-- COL 1: Text -->
                     <td width="70%">
-                      <p style="text-align:justify;">
+                      <p style="text-align:justify; margin-top:0;">
                         Our logo is inspired by <strong>Pandora’s box</strong> and the force that had been hidden inside it is <strong>AI</strong>.
                         The lid is now open: for good or for bad, AI is out in the world and there is no going back.
                         At <strong>RazumAI</strong>, we are here to help pharma <strong>harness that energy</strong> — in a safe and responsible way.
@@ -147,22 +151,22 @@
                         referencing the company’s name.
                       </p>
 
-                      <p style="text-align:justify;">
+                      <p style="text-align:justify; margin-bottom:0;">
                         The <strong>lid features the structure of myoglobin</strong> — the first protein structure ever solved.
                         Its inclusion pays homage to <strong>Google DeepMind’s AlphaFold</strong>, which showed that AI can solve real-life
                         <strong>critical challenges</strong> in pharma, such as protein folding, profoundly shaping modern drug discovery.
                       </p>
                     </td>
 
-                    <!-- COL 2: Spacer (40px, consistent with page) -->
+                    <!-- COL 2: Spacer -->
                     <td width="40" style="width:40px;">&nbsp;</td>
 
-                    <!-- COL 3: Logo (auto width, top-aligned) -->
+                    <!-- COL 3: Logo -->
                     <td align="right" style="white-space:nowrap;">
                       <img
                         src="assets/img/99d_winning_design_logo1.png"
                         alt="RazumAI logo showing R on the left face, AI on the right, and myoglobin outline on the lid"
-                        style="display:block;width:260px;height:auto;border-radius:12px;background:#fff;border:1px solid var(--border);"
+                        style="display:block;width:220px;height:auto;border-radius:12px;background:#fff;border:1px solid var(--border);"
                       />
                     </td>
                   </tr>

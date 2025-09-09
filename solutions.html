@@ -7,29 +7,8 @@
     <title>Solutions — RazumAI</title>
     <link rel="icon" href="assets/img/99d_winning_design_logo1.png" />
     <link rel="stylesheet" href="style.css">
-    <style>
-      /* Keep the two core cards equal height and tidy */
-      .solutions-grid{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:16px;
-        align-items:stretch;
-      }
-      .solutions-grid .card{
-        display:flex;              /* make internal layout flexible */
-        flex-direction:column;
-        height:100%;               /* equalize heights */
-      }
-      .solutions-grid .card .cta{ margin-top:auto; } /* pin buttons to bottom */
-      @media (max-width:900px){
-        .solutions-grid{ grid-template-columns:1fr; }
-      }
-      .see-also{
-        color:var(--sub);
-        margin:18px 0 6px;
-        font-weight:600;
-      }
-    </style>
+    <!-- Google Fonts: Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- Masthead -->
@@ -76,7 +55,6 @@
           <div class="cta" style="display:flex; gap:10px;">
             <a class="button primary" href="contact.html">Request pilot</a>
             <a class="button" href="https://github.com/RazumAI-ch/recipe-quality-validator">View on GitHub</a>
-
           </div>
         </div>
 

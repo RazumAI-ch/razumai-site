@@ -1,7 +1,7 @@
 /* File: style.css
    Site styles for RazumAI.
-   Updated: mission prominence, hero spacing, pull quotes (global),
-   narrower text columns for readability.
+   Updated: switch to Lato, lighter disclosure styling, footer thin,
+   mission prominence, hero spacing, pull quotes, narrower text columns.
 */
 
 :root {
@@ -22,7 +22,8 @@
 html,body{
   margin:0;padding:0;
   background:var(--bg);color:var(--text);
-  font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif
+  font-family:'Lato',sans-serif;
+  font-size:16px; line-height:1.6; font-weight:400;
 }
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
@@ -76,7 +77,7 @@ a:hover{text-decoration:underline}
 }
 
 .brand-name{
-  font-size:28px; font-weight:800; color:#fff; letter-spacing:.32px;
+  font-size:28px; font-weight:700; color:#fff; letter-spacing:.32px;
 }
 .brand-ai { color:#ff7a1a; }
 
@@ -85,7 +86,7 @@ a:hover{text-decoration:underline}
   padding:6px 12px;
   border-radius:8px;
   color:#ffffff;
-  font-weight:600;
+  font-weight:600; /* Lato will synthesize between 400 and 700 */
   text-shadow:0 1px 2px rgba(0,0,0,.35);
   transition:background .15s ease, color .15s ease;
 }
@@ -101,7 +102,7 @@ a:hover{text-decoration:underline}
 .intro-title{
   font-size:38px;
   line-height:1.15;
-  font-weight:800;
+  font-weight:700; /* match Lato weights */
   letter-spacing:.2px;
   margin:0 0 22px;
 }
@@ -129,7 +130,7 @@ a.button, .cta a.button {
   border:1px solid rgba(255,255,255,.14);
   background:rgba(255,255,255,.12);
   color:var(--text);
-  font-weight:600;
+  font-weight:700; /* stronger with Lato */
   box-shadow:0 2px 8px rgba(0,0,0,.25);
   transition:background .15s ease, filter .15s ease, box-shadow .15s ease;
 }
@@ -155,14 +156,14 @@ a.button.primary:hover { filter:brightness(1.06); }
 }
 .card h3{margin:0 0 6px}
 .section{padding:24px}
-.h2{font-size:28px;margin:0 0 12px}
+.h2{font-size:28px;margin:0 0 12px;font-weight:700}
 .list{display:grid;gap:12px;margin:12px 0;padding:0}
 .list li{
   list-style:none;background:var(--muted);border:1px solid var(--border);
   padding:12px;border-radius:12px
 }
 .footer{margin-top:40px;border-top:1px solid var(--border);background:var(--muted)}
-.footer small{color:var(--sub)}
+.footer small{color:var(--sub);font-weight:100} /* Thin Lato for footer */
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
@@ -288,20 +289,31 @@ a.button.primary:hover { filter:brightness(1.06); }
 }
 
 /* Pull-quote modifiers for About page */
-.pull-quote--top { /* sits near slogan; optional fine-tune */
-  margin-top: 0;
-}
+.pull-quote--top { margin-top: 0; }
+.pull-quote--after { clear: right; margin-top: 6px; }
 
-.pull-quote--after {
-  clear: right;          /* forces this quote to start below any earlier right floats */
-  margin-top: 6px;       /* small breathing room from the paragraph block */
-}
-
-/* Keep left column tidy and clear floats at the end of the section (already present) */
+/* Keep left column tidy (already present) */
 .about-body p { max-width: 550px; }
 .about-body::after { content:""; display:block; clear:both; }
 
-p {
-  margin-top: 0;
-  margin-bottom: 1em; /* keep paragraph spacing */
+p { margin-top: 0; margin-bottom: 1em; }
+
+/* ---------- Curious fact disclosure (lighter, secondary) ---------- */
+.curious-summary{
+  cursor:pointer;
+  font-weight:300; /* Light Lato */
+  color:#777;
+  line-height:1.4;
+}
+.curious-hint{
+  font-weight:300;
+  font-size:0.85em;
+  color:#999;
+}
+.curious-content{
+  margin-top:8px;
+  font-size:0.9em;
+  font-weight:300; /* Light */
+  color:#555;
+  line-height:1.5;
 }
