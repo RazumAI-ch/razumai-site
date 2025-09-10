@@ -317,3 +317,54 @@ p { margin-top: 0; margin-bottom: 1em; }
   color:#555;
   line-height:1.5;
 }
+
+/* Header layout (safe defaults) */
+.nav-inner {
+  display: flex;
+  align-items: center;
+}
+.menu {
+  margin-left: auto;         /* pushes the menu to the right */
+  display: flex;
+  gap: 24px;                 /* or whatever you were using */
+}
+
+/* Brand/logo link — keep visuals identical, no underline */
+.brand-home-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  margin: 0;                 /* override any generic link margins */
+  padding: 0;
+}
+.brand-home-link:hover,
+.brand-home-link:focus,
+.brand-home-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+.brand-home-link:visited {
+  color: inherit;
+}
+.brand-home-link img {
+  display: block;            /* avoids baseline gaps */
+}
+
+/* IMPORTANT: prevent nav link styles from leaking onto the brand */
+.menu a {                    /* keep your existing nav link styles here */
+  /* example:
+  text-decoration: none;
+  padding: 6px 0;
+  font-weight: 400;
+  */
+}
+
+/* If you currently have something broad like .nav-inner a { margin-left:24px; text-transform:uppercase; }
+   either narrow it to .menu a OR neutralize it for the brand link: */
+.nav-inner > .brand-home-link {
+  margin: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  /* add any other overrides your generic header links might be applying */
+}
