@@ -15,6 +15,23 @@
       .curious-hint { font-weight: 300; font-size: 0.85em; color: #999; }
       .curious-content { margin-top: 8px; font-size: 0.9em; font-weight: 300; color: #555; line-height: 1.5; }
       footer small { font-weight: 100; color: #777; }
+
+      /* Subtle Technology Partnership styling */
+      .tech-partner {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        font-size: 0.95em;
+        color: #9aa6b2;
+        line-height: 1.6;
+        text-align: justify; /* ✅ consistent with body text */
+      }
+      .tech-partner .h3 {
+        margin: 0 0 6px 0;
+        font-size: 1em;
+        font-weight: 700;
+        color: #9aa6b2;
+        text-align: left; /* keep heading left aligned */
+      }
     </style>
   </head>
 
@@ -53,49 +70,58 @@
           </td>
         </tr>
 
-        <!-- Main row: TEXT (50%) | SPACER (40px) | QUOTES -->
+        <!-- Main row: TEXT (60%) | SPACER (40px) | QUOTES (40%) -->
         <tr valign="top">
-          <!-- LEFT: all paragraphs together -->
-          <td width="60%">
-            <p style="text-align:justify; max-width:none; margin-top:0;">
+          <!-- LEFT: 60% -->
+          <td width="60%" style="text-align:justify; vertical-align:top;">
+            <p style="max-width:none; margin-top:0;">
               <strong>With every click, you make patients safer — and improve data quality for everyone.</strong>
               Continuous interactions with our system make the system smarter over time. Each correction, each flagged record,
               and each validation helps the AI recognize similar issues more effectively in the future.
             </p>
 
-            <p style="text-align:justify; max-width:none;">
+            <p style="max-width:none;">
               This creates a <strong>network effect</strong>: the data itself never leaves your environment, but the
               <strong>learnings do</strong>. Every site and every company benefits from what others have taught the system.
               In-house tools can fix local problems, but they cannot share knowledge industry-wide.
             </p>
 
-            <p style="text-align:justify; max-width:none;">
+            <p style="max-width:none;">
               This is possible because our solutions are
-              <a href="https://en.wikipedia.org/wiki/Federated_learning">federated by design</a>.
+              <a href="https://en.wikipedia.org/wiki/Federated_learning" rel="noopener noreferrer">federated by design</a>.
               <strong>Data stays on-prem or in your secure cloud</strong>, while only learned patterns about data quality are shared —
               never proprietary content or IP. Much like Google Search improves with every user interaction, our base model becomes
               stronger as more companies use it — continuously improving pharma’s ability to safeguard data quality and patient safety.
             </p>
+
+            <!-- Subtle Technology Partnership (smaller, gray, justified text) -->
+            <div class="tech-partner">
+              <div class="h3">Technology Partnership</div>
+              RazumAI is a <strong>member of the Google for Startups Cloud Program</strong>. This partnership provides
+              enterprise-grade AI infrastructure and direct access to Google’s machine learning experts. For our pharma clients,
+              it means <strong>Vertex AI–powered training at scale</strong>, <strong>Google-grade security</strong>, and a platform
+              built to support <strong>GxP-aligned, privacy-preserving</strong> model development.
+            </div>
           </td>
 
           <!-- SPACER -->
           <td width="40" style="width:40px;">&nbsp;</td>
 
-          <!-- RIGHT: quotes -->
-          <td style="padding-top:0px;">
-            <blockquote style="font-size:22px;font-weight:700;line-height:1.5;margin:0;text-align:justify;">
+          <!-- RIGHT: 40% quotes -->
+          <td style="padding-top:px; text-align:justify; vertical-align:top;">
+            <blockquote style="font-size:22px;font-weight:700;line-height:1.5;margin:0;">
               “With every click, you make patients safer — and improve data quality for everyone.”
             </blockquote>
 
-            <br/>
+            <br/><br/>
 
-            <blockquote style="font-size:22px;font-weight:700;line-height:1.5;margin:0;text-align:justify;">
+            <blockquote style="font-size:22px;font-weight:700;line-height:1.5;margin:0;">
               “By working through RazumAI, your team’s efforts raise quality standards beyond your walls — and you benefit from everyone else’s lessons.”
             </blockquote>
 
-            <br/>
+            <br/><br/>
 
-            <blockquote style="font-size:22px;font-weight:700;line-height:1.5;margin:0;text-align:justify;">
+            <blockquote style="font-size:22px;font-weight:700;line-height:1.5;margin:0;">
               “Your data never leaves your company — only <em>lessons about data quality</em> are shared (never your IP).”
             </blockquote>
           </td>
@@ -123,21 +149,21 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
                   <tr valign="top">
                     <!-- COL 1: Text -->
-                    <td width="70%">
-                      <p style="text-align:justify; margin-top:0;">
+                    <td width="70%" style="text-align:justify;">
+                      <p style="margin-top:0;">
                         Our logo is inspired by <strong>Pandora’s box</strong> and the force that had been hidden inside it is <strong>AI</strong>.
                         The lid is open: for good or for bad, AI is out in the world and there is no going back.
                         At <strong>RazumAI</strong>, we are here to help pharma <strong>harness that energy</strong> — in a safe and responsible way.
                       </p>
 
-                      <p style="text-align:justify;">
+                      <p>
                         The <strong>inside</strong> of the box is rendered in <strong>orange</strong> to symbolize AI’s transformative energy,
                         while the <strong>outside</strong> of the box is done in <strong>blue</strong> to reflect pharma’s rigor and care.
                         Subtle artistic impressions of the letters <strong>R</strong> and <strong>AI</strong> are embedded in the outer walls,
                         referencing the company’s name.
                       </p>
 
-                      <p style="text-align:justify; margin-bottom:0;">
+                      <p style="margin-bottom:0;">
                         The <strong>lid features the structure of myoglobin</strong> — the first protein structure ever solved.
                         Its inclusion pays homage to <strong>Google DeepMind’s AlphaFold</strong>, which showed that AI can solve real-life
                         <strong>critical challenges</strong> in pharma, such as protein folding, profoundly shaping modern drug discovery.
@@ -167,7 +193,7 @@
     <footer class="footer">
       <div class="container">
         <small>© 2025 RazumAI — Razum GmbH, Switzerland. All rights reserved.</small><br />
-        <small>AI training powered by Google Cloud Platform</small>
+        <small>Member of Google for Startups Cloud Program&nbsp;|&nbsp;Infrastructure powered by Google Cloud</small>
       </div>
     </footer>
   </body>
