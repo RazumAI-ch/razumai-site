@@ -368,3 +368,21 @@ p { margin-top: 0; margin-bottom: 1em; }
   letter-spacing: normal;
   /* add any other overrides your generic header links might be applying */
 }
+
+/* Headline accents */
+.intro h3{
+  position:relative;
+  margin:28px 0 10px;
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+.intro h3::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;            /* sits just below text */
+  width:250px;             /* short line */
+  height:2px;
+  background:rgba(255,255,255,.9);
+  border-radius:2px;
+}
